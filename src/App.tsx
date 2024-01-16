@@ -1,8 +1,10 @@
+import {Header} from "./layout/header/Header.tsx";
+
 function App() {
 
   return (
     <>
-
+      <Header/>
     </>
   )
 }
