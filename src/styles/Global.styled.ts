@@ -26,13 +26,13 @@ export const GlobalStyle = createGlobalStyle`
   html,
   body {
     height: 100%;
+    font-size: 20px;
   }
 
   body {
     color: ${({theme})=>theme.colors.text};
     line-height: 1;
     font-family: 'Roboto', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-size: 20px;
     text-rendering: optimizeLegibility;
     -ms-text-size-adjust: 100%;
     -moz-text-size-adjust: 100%;
