@@ -25,9 +25,11 @@ const SocialItem = styled.li`
 const SocialLink = styled.a`
   display: block;
   color: ${({theme})=>theme.colors.colorMain};
-  &:hover{
-    svg{
-      fill: ${({theme})=>theme.colors.colorMain};
+  @media (any-hover: hover){
+    &:hover{
+      svg{
+        fill: ${({theme})=>theme.colors.colorMain};
+      }
     }
   }
   svg{

@@ -146,9 +146,11 @@ const MenuLink = styled.a`
     opacity: 0;
     transition: all .3s;
   }
-  &:hover{
-    &::before{
-      opacity: 1;
+  @media (any-hover: hover){
+    &:hover{
+      &::before{
+        opacity: 1;
+      }
     }
   }
 `
