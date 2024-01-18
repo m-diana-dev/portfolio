@@ -16,4 +16,7 @@ const StyledLogo = styled.a`
   &:hover{
     color: ${({theme})=>theme.colors.colorSecondary};
   }
+  @media ${({theme}) => theme.media.tablet} {
+    font-size: 1rem;
+  }
 `

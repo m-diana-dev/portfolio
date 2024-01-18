@@ -13,6 +13,11 @@ declare module 'styled-components' {
             title: string,
             text: string,
         }
+        media: {
+            tablet: string,
+            mobile: string,
+            mobileSmall: string,
+        }
     }
 }
 export const theme = {
@@ -24,6 +29,11 @@ export const theme = {
         colorTertiary: '#D2FF85',
         title: '#1B1B1B',
         text: '#494949'
+    },
+    media: {
+        tablet: 'screen and (max-width: 991px)',
+        mobile: 'screen and (max-width: 768px)',
+        mobileSmall: 'screen and (max-width: 480px)',
     }
 }
 

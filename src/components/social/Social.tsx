@@ -13,7 +13,7 @@ export const Social: FC<SocialPropsType> = ({items}) => {
     );
 }
 
-const SocialList = styled.ul`
+export const SocialList = styled.ul`
   display: flex;
   align-items: center;
 `

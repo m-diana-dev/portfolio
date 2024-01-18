@@ -26,6 +26,7 @@ export const GlobalStyle = createGlobalStyle`
   html,
   body {
     height: 100%;
+    min-width: 320px;
     font-size: 20px;
   }
 
