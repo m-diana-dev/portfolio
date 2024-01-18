@@ -14,7 +14,7 @@ export const Header = () => {
                     <Logo/>
                     <Menu>
                         <MenuBurger/>
-                        <MenuBody isOpen={true}>
+                        <MenuBody isOpen={false}>
                             <MenuList>
                                 {menuItems.map(el => <MenuItem><MenuLink href="">{el}</MenuLink></MenuItem>)}
                             </MenuList>
