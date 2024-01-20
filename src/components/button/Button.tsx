@@ -25,6 +25,10 @@ export const StyledButton = styled.button`
   line-height: 140%; 
   transition: all .3s;
 
+  @media ${({theme}) => theme.media.mobile} {
+    font-size: 0.8rem;
+  }
+
   @media (any-hover: hover){
     &:hover{
       background: ${({theme})=>theme.colors.colorMain};
