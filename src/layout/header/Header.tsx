@@ -33,8 +33,9 @@ const StyledHeader = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, .8);
+  z-index: 40;
   @media ${({theme}) => theme.media.mobile} {
     padding: 10px 0;
   }

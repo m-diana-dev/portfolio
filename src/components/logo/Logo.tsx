@@ -9,6 +9,7 @@ export const Logo = () => {
 }
 
 const StyledLogo = styled.a`
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: ${({theme})=>theme.colors.colorMain};
