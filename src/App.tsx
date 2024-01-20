@@ -1,5 +1,6 @@
 import {Header} from "./layout/header/Header.tsx";
 import {Main} from "./layout/sections/main/Main.tsx";
+import {Tools} from "./layout/sections/tools/Tools.tsx";
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
         <>
             <Header/>
             <Main/>
+            <Tools/>
         </>
     )
 }
