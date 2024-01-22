@@ -3,6 +3,7 @@ import {Main} from "./layout/sections/main/Main.tsx";
 import {Tools} from "./layout/sections/tools/Tools.tsx";
 import {About} from "./layout/sections/about/About.tsx";
 import styled from "styled-components";
+import {Services} from "./layout/sections/services/Services.tsx";
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
             <Tools/>
             <Sections>
                 <About/>
+                <Services/>
             </Sections>
         </>
     )
@@ -21,6 +23,7 @@ function App() {
 const Sections = styled.div`
   section{
     padding: 110px 0;
+    overflow: hidden;
 
     &:nth-child(odd){
       background-color: ${({theme}) => theme.colors.primaryBg}
@@ -33,7 +36,7 @@ const Sections = styled.div`
       padding: 80px 0;
     }
     @media ${({theme}) => theme.media.mobile} {
-      padding: 50px 0;
+      padding: 60px 0;
     }
   }
 `

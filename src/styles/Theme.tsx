@@ -12,6 +12,7 @@ declare module 'styled-components' {
             colorTertiary: string,
             title: string,
             text: string,
+            lightText: string
         }
         media: {
             tablet: string,
@@ -28,7 +29,8 @@ export const theme = {
         colorSecondary: '#FFD885',
         colorTertiary: '#D2FF85',
         title: '#1B1B1B',
-        text: '#494949'
+        text: '#494949',
+        lightText: '#F7F3FF',
     },
     media: {
         tablet: 'screen and (max-width: 991px)',
