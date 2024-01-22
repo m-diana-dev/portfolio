@@ -8,6 +8,7 @@ import imgWebp from "../../../assets/images/about/main.webp";
 import {AboutItem} from "../../../layout/sections/about/aboutItem/AboutItem.tsx";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {font} from "../../../styles/Common.ts";
+import {Decor} from "../../../components/Decor.ts";
 
 export const About = () => {
     return (
@@ -32,10 +33,10 @@ export const About = () => {
                         </AboutItems>
                     </AboutContent>
                     <AboutImg>
-                        <AboutImgDecor>
+                        <Decor>
                             <Icon id={'decor4.3'} width={'128'} height={'112'} viewBox={'0 0 118 118'}/>
                             <Icon id={'decor5.1'} width={'142'} height={'143'} viewBox={'0 0 140 140'}/>
-                        </AboutImgDecor>
+                        </Decor>
                         <picture>
                             <source srcSet={imgWebp} type="image/webp"/>
                             <img src={imgPng} alt="developer"/>
@@ -48,13 +49,6 @@ export const About = () => {
 }
 
 const StyledAbout = styled.section`
-  padding: 110px 0;
-  @media ${({theme}) => theme.media.tablet} {
-    padding: 80px 0;
-  }
-  @media ${({theme}) => theme.media.mobile} {
-    padding: 50px 0;
-  }
 
   ${FlexWrapp} {
     @media ${({theme}) => theme.media.tablet} {
@@ -97,50 +91,42 @@ const AboutImg = styled.div`
     width: 100%;
     object-fit: contain;
   }
-`
-const AboutImgDecor = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  svg{
-    position: absolute;
-  }
-  svg:nth-child(1) {
-    top: 40px;
-    right: 0;
-    @media screen and (max-width: 1200px){
-      width: 90px;
-      height: 75px;
-      right: 20px;
-    }
-    @media ${({theme}) => theme.media.tablet} {
+  ${Decor} {
+    z-index: 1;
+    overflow: visible;
+    svg:nth-child(1) {
+      top: 40px;
       right: 0;
+      @media screen and (max-width: 1200px){
+        width: 90px;
+        height: 75px;
+        right: 20px;
+      }
+      @media ${({theme}) => theme.media.tablet} {
+        right: 0;
+      }
+      @media ${({theme}) => theme.media.mobileSmall} {
+        width: 80px;
+        height: 65px;
+      }
     }
-    @media ${({theme}) => theme.media.mobileSmall} {
-      width: 80px;
-      height: 65px;
-    }
-  }
-  svg:nth-child(2) {
-    bottom: -30px;
-    left: 100px;
-    @media screen and (max-width: 1200px){
-      width: 110px;
-      height: 111px;
-    }
-    @media ${({theme}) => theme.media.tablet} {
-      left: -30px;
-      bottom: 10px;
-    }
-    @media ${({theme}) => theme.media.mobileSmall} {
-      width: 90px;
-      height: 80px;
-      left: -40px;
-      bottom: 10px;
+    svg:nth-child(2) {
+      bottom: -30px;
+      left: 100px;
+      @media screen and (max-width: 1200px){
+        width: 110px;
+        height: 111px;
+      }
+      @media ${({theme}) => theme.media.tablet} {
+        left: -30px;
+        bottom: 10px;
+      }
+      @media ${({theme}) => theme.media.mobileSmall} {
+        width: 90px;
+        height: 80px;
+        left: -40px;
+        bottom: 10px;
+      }
     }
   }
 `

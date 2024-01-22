@@ -3,15 +3,16 @@ import {Container} from "../../../components/Container.ts";
 import styled from "styled-components";
 import {font} from "../../../styles/Common.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
+import {Decor} from "../../../components/Decor.ts";
 
 export const Main = () => {
     return (
         <StyledMain>
-            <MainDecor>
+            <Decor>
                 <Icon id={'decor1.1'} width={'269'} height={'251'} viewBox={'0 0 260 260'}/>
                 <Icon id={'decor4.1'} width={'102'} height={'102'} viewBox={'0 0 100 100'}/>
                 <Icon id={'decor2.1'} width={'235'} height={'198'} viewBox={'0 0 220 220'}/>
-            </MainDecor>
+            </Decor>
             <Container>
                 <MainTitle>Объединение опыта в Digital с пиксельной точностью!</MainTitle>
                 <MainSubtitle>Превращение плоских макетов в удобные для пользователя веб-сайты с изюминкой
@@ -39,61 +40,52 @@ const StyledMain = styled.section`
   ${StyledButton} {
     margin: 0 auto;
   }
-`
 
-const MainDecor = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-  overflow: hidden;
-  svg{
-    position: absolute;
-  }
-  svg:nth-child(1) {
-    top: 20%;
-    left: 0;
-    @media screen and (max-width: 1200px){
-      width: 220px;
-      height: 200px;
-      left: -100px;
-      top: 10%;
+  ${Decor} {
+    svg:nth-child(1) {
+      top: 20%;
+      left: 0;
+      @media screen and (max-width: 1200px) {
+        width: 220px;
+        height: 200px;
+        left: -100px;
+        top: 10%;
+      }
+      @media ${({theme}) => theme.media.mobile} {
+        left: -100px;
+        top: auto;
+        bottom: -30px;
+      }
     }
-    @media ${({theme}) => theme.media.mobile} {
-      left: -100px;
-      top: auto;
-      bottom: -30px;
+
+    svg:nth-child(2) {
+      top: 100px;
+      right: 200px;
+      @media screen and (max-width: 1200px) {
+        width: 70px;
+        height: 70px;
+        top: 80px;
+        right: 100px;
+      }
+      @media ${({theme}) => theme.media.mobile} {
+        display: none;
+      }
     }
-  }
-  svg:nth-child(2) {
-    top: 100px;
-    right: 200px;
-    @media screen and (max-width: 1200px){
-      width: 70px;
-      height: 70px;
-      top: 80px;
-      right: 100px;
-    }
-    @media ${({theme}) => theme.media.mobile} {
-      display: none;
-    }
-  }
-  svg:nth-child(3) {
-    bottom: 15%;
-    right: 40px;
-    @media screen and (max-width: 1200px){
-      width: 190px;
-      height: 170px;
-      bottom: 10%;
+
+    svg:nth-child(3) {
+      bottom: 15%;
       right: 40px;
-    }
-    @media ${({theme}) => theme.media.mobile} {
-      bottom: auto;
-      top: 40px;
-      right: -90px;
+      @media screen and (max-width: 1200px) {
+        width: 190px;
+        height: 170px;
+        bottom: 10%;
+        right: 40px;
+      }
+      @media ${({theme}) => theme.media.mobile} {
+        bottom: auto;
+        top: 40px;
+        right: -90px;
+      }
     }
   }
 `
