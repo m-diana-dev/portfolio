@@ -4,6 +4,7 @@ import {Tools} from "./layout/sections/tools/Tools.tsx";
 import {About} from "./layout/sections/about/About.tsx";
 import styled from "styled-components";
 import {Services} from "./layout/sections/services/Services.tsx";
+import {Works} from "./layout/sections/works/Works.tsx";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
             <Sections>
                 <About/>
                 <Services/>
+                <Works/>
             </Sections>
         </>
     )
