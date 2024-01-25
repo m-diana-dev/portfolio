@@ -1,19 +1,26 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {SectionSubtitle} from "../../../components/SectionSubtitle.ts";
 import {SectionTitle} from "../../../components/SectionTitle.ts";
 import {WorkItems} from "../works/workItems/WorkItems.tsx";
 import {Decor} from "../../../components/Decor.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
+import {useState} from "react";
 
+export type LabelType = 'landing' | 'store' | 'corporate' | 'wordpress' | 'app'
 export const Works = () => {
-    const TabsItems = [
+    const TabsItems: { title: string, label: LabelType }[] = [
         {title: 'Landing Pages', label: 'landing'},
         {title: 'Интернет-магазины', label: 'store'},
         {title: 'Корпоративные сайты', label: 'corporate'},
         {title: 'WordPress', label: 'wordpress'},
         {title: 'Web-приложения', label: 'app'},
     ]
+
+
+    const [currentFilterStatus, setCurrentFilterStatus] = useState<LabelType>('landing')
+
+    const ChangeFilterStatus = (label: LabelType) => setCurrentFilterStatus(label)
 
     return (
         <StyledWorks>
@@ -25,9 +32,12 @@ export const Works = () => {
                 <SectionSubtitle>Проекты</SectionSubtitle>
                 <SectionTitle>Некоторые мои работы</SectionTitle>
                 <Tabs>
-                    {TabsItems.map(el => <TabsItem><TabsLink href="">{el.title}</TabsLink></TabsItem>)}
+                    {TabsItems.map(el => <TabsItem>
+                        <TabsLink active={currentFilterStatus === el.label}
+                            onClick={() => ChangeFilterStatus(el.label)}>{el.title}</TabsLink>
+                    </TabsItem>)}
                 </Tabs>
-                <WorkItems/>
+                <WorkItems currentFilterStatus={currentFilterStatus}/>
             </Container>
         </StyledWorks>
     );
@@ -35,12 +45,14 @@ export const Works = () => {
 
 const StyledWorks = styled.section`
   position: relative;
-  ${Decor}{
+
+  ${Decor} {
     z-index: 0;
-    svg:nth-child(1){
+
+    svg:nth-child(1) {
       top: 50px;
       right: 100px;
-      @media screen and (max-width: 1200px){
+      @media screen and (max-width: 1200px) {
         width: 90px;
         height: 80px;
       }
@@ -48,10 +60,11 @@ const StyledWorks = styled.section`
         display: none;
       }
     }
-    svg:nth-child(2){
+
+    svg:nth-child(2) {
       bottom: -100px;
       right: 45%;
-      @media screen and (max-width: 1200px){
+      @media screen and (max-width: 1200px) {
         width: 140px;
         height: 140px;
         bottom: -80px;
@@ -64,7 +77,8 @@ const StyledWorks = styled.section`
       }
     }
   }
-  ${SectionTitle}{
+
+  ${SectionTitle} {
     margin-bottom: 40px;
     @media ${({theme}) => theme.media.tablet} {
       margin-bottom: 30px;
@@ -108,7 +122,7 @@ const TabsItem = styled.li`
     }
   }
 `
-const TabsLink = styled.a`
+const TabsLink = styled.button<{ active: boolean }>`
   padding-bottom: 4px;
   position: relative;
 
@@ -122,6 +136,10 @@ const TabsLink = styled.a`
     border-radius: 2px;
     background-color: ${({theme}) => theme.colors.colorMain};
     transition: all .3s;
+
+    ${({active}) => active && css<{ active: boolean }>`
+      width: 100%;
+    `}
   }
 
   @media (any-hover: hover) {
@@ -131,4 +149,5 @@ const TabsLink = styled.a`
       }
     }
   }
+
 `
