@@ -48,6 +48,7 @@ const StyledWorks = styled.section`
 
   ${Decor} {
     z-index: 0;
+    overflow: visible;
 
     svg:nth-child(1) {
       top: 50px;
@@ -63,17 +64,23 @@ const StyledWorks = styled.section`
 
     svg:nth-child(2) {
       bottom: -100px;
-      right: 45%;
+      right: 35%;
       @media screen and (max-width: 1200px) {
         width: 140px;
         height: 140px;
         bottom: -80px;
+        right: 35%;
+      }
+      @media ${({theme}) => theme.media.tablet} {
+        width: 115px;
+        height: 115px;
+        bottom: -70px;
       }
       @media ${({theme}) => theme.media.mobile} {
-        width: 120px;
-        height: 120px;
-        bottom: -70px;
-        right: 30%;
+        width: 100px;
+        height: 100px;
+        right: 25%;
+        bottom: -60px;
       }
     }
   }

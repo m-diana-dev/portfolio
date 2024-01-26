@@ -42,6 +42,7 @@ export const Services = () => {
 }
 
 const StyledServices = styled.section`
+  overflow: hidden;
   ${SectionSubtitle} {
     text-align: center;
     position: relative;

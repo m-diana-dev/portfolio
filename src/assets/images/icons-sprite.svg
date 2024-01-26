@@ -5,10 +5,10 @@
               stroke="#B285FF" fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g id="arrow-right">
-        <path d="M1 1L9 8.5L1 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1 1L9 8.5L1 16" fill="none" stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g id="arrow-left">
-        <path d="M9 1L1 8.5L9 16" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 1L1 8.5L9 16" fill="none" stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
     </g>
     <g id="arrow-top">
         <path d="M16 9L8.5 1L1 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -25,6 +25,14 @@
               stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M27.5022 41C29.6589 40.9992 31.7347 40.1751 33.3091 38.6948C34.8834 37.2144 35.8387 35.1884 35.9814 33.0272C36.124 30.8659 35.4434 28.731 34.0774 27.0549C32.7113 25.3787 30.762 24.2867 28.6243 24C26.2839 26.1032 24.7417 28.9562 24.2605 32.0731C22.5142 31.6441 20.8704 30.8701 19.4251 29.7964C19.0054 31.0788 18.8944 32.4429 19.1013 33.7767C19.3082 35.1105 19.8271 36.376 20.6154 37.4694C21.4036 38.5627 22.4388 39.4528 23.6359 40.0666C24.8331 40.6803 26.1581 41.0002 27.5022 41Z"
               stroke="#1B1B1B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g id="quotes">
+        <g stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
+            <circle class="st0" cx="9" cy="18" r="4"/>
+            <path class="st0" d="M5,18c0-4.4,3.6-8,8-8"/>
+            <circle class="st0" cx="23" cy="18" r="4"/>
+            <path class="st0" d="M19,18c0-4.4,3.6-8,8-8"/>
+        </g>
     </g>
     <g id="android">
         <path d="M172,156a8,8,0,1,1-8-8A7.99993,7.99993,0,0,1,172,156Zm-80-8a8,8,0,1,0,8,8A7.99993,7.99993,0,0,0,92,148Zm144,20v24a12.01375,12.01375,0,0,1-12,12H32a12.01375,12.01375,0,0,1-12-12V169.12893a109.42633,109.42633,0,0,1,37.18213-82.29L29.17139,58.82863a4.00026,4.00026,0,0,1,5.65722-5.65722L63.41016,81.753a106.64706,106.64706,0,0,1,64.20849-21.75244C127.74561,60,127.876,60,128.00342,60a107.15753,107.15753,0,0,1,64.77392,21.56592l28.394-28.394a3.99992,3.99992,0,0,1,5.65722,5.65625L199.01953,86.63723q2.67152,2.33862,5.21485,4.8623A107.27637,107.27637,0,0,1,236,168Zm-8,0A99.99959,99.99959,0,0,0,128.00244,68c-.11914,0-.23682,0-.35644.00049C72.70117,68.19045,28,113.55666,28,169.12893V192a4.00458,4.00458,0,0,0,4,4H224a4.00458,4.00458,0,0,0,4-4Z"/>

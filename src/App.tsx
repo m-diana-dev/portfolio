@@ -5,6 +5,7 @@ import {About} from "./layout/sections/about/About.tsx";
 import styled from "styled-components";
 import {Services} from "./layout/sections/services/Services.tsx";
 import {Works} from "./layout/sections/works/Works.tsx";
+import {Reviews} from "./layout/sections/reviews/Reviews.tsx";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
                 <About/>
                 <Services/>
                 <Works/>
+                <Reviews/>
             </Sections>
         </>
     )
@@ -25,7 +27,6 @@ function App() {
 const Sections = styled.div`
   section{
     padding: 110px 0;
-    overflow: hidden;
 
     &:nth-child(odd){
       background-color: ${({theme}) => theme.colors.primaryBg}
