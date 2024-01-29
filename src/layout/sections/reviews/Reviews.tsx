@@ -10,17 +10,18 @@ import {
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import {Icon} from "../../../components/icon/Icon.tsx";
+import {Decor} from "../../../components/Decor.ts";
 
 export const Reviews = () => {
     const sliderItems = [
         <ReviewsItem name={'Надежда'}
                      text={'Задача выполнена оперативно, коммуникация очень приятная, а результат отличный! Спасибо, Диана! Смело рекомендую исполнителя, даже не сомневайтесь!'}/>,
-        <ReviewsItem name={'Евгений'}
-                     text={'Всё отлично! Работа выполнена на все 100%, нужны корректировки внесены оперативно. Качество верстки на высоте, с добавлением анимации, а не просто выполнение работы. Отличный исполнитель - не сомневайтесь.'}/>,
-        <ReviewsItem name={'Роман'}
-                     text={'Комфортное общение, исполнитель понимает с полуслова. Быстро и очень качественно. Однозначно рекомендую и буду работать с исполнителем еще.'}/>,
         <ReviewsItem name={'Руслан'}
                      text={'Вновь и вновь возвращаюсь к исполнителю! Быстро, четко и со всеми рекомендациями. Диана, спасибо за оперативность : )'}/>,
+        <ReviewsItem name={'Роман'}
+                     text={'Комфортное общение, исполнитель понимает с полуслова. Быстро и очень качественно. Однозначно рекомендую и буду работать с исполнителем еще.'}/>,
+        <ReviewsItem name={'Евгений'}
+                     text={'Всё отлично! Работа выполнена на все 100%, нужны корректировки внесены оперативно. Качество верстки на высоте, с добавлением анимации, а не просто выполнение работы. Отличный исполнитель - не сомневайтесь.'}/>,
         <ReviewsItem name={'Михаил'}
                      text={'Все отлично! Не первый раз обращаемся. Всегда все в срок, без ошибок. Приятно работать.'}/>,
         <ReviewsItem title={'Посмотреть другие отзывы'}/>
@@ -32,12 +33,15 @@ export const Reviews = () => {
         768: {
             items: 2,
         },
-        480: {
+        600: {
             items: 2,
         },
     }
     return (
         <StyledReviews>
+            <Decor>
+                <Icon id={'decor1.2'} width={'200'} height={'200'} viewBox={'0 0 270 270'}/>
+            </Decor>
             <Container>
                 <SectionSubtitle>Отзывы</SectionSubtitle>
                 <SectionTitle>Что говорят мои заказчики</SectionTitle>
@@ -58,13 +62,46 @@ export const Reviews = () => {
 }
 
 const StyledReviews = styled.section`
+  position: relative;
+  ${Decor} {
+    z-index: 0;
+    svg:nth-child(1) {
+      bottom: -100px;
+      right: 50px;
+      transform: rotate(290deg);
+      @media screen and (max-width: 1200px) {
+        width: 170px;
+        height: 170px;
+      }
+      @media ${({theme}) => theme.media.tablet} {
+        width: 150px;
+        height: 150px;
+        bottom: -90px;
+      }
+      @media ${({theme}) => theme.media.mobile} {
+        width: 130px;
+        height: 130px;
+        bottom: -80px;
+        right: -10px;
+      }
+    }
+  }
   ${SectionTitle} {
     margin-bottom: 40px;
+    width: calc(100% - 100px);
+    @media ${({theme}) => theme.media.mobile} {
+      margin-bottom: 20px;
+      width: 100%;
+    }
   }
 
   .alice-carousel {
     width: calc(100% + 20px);
     margin: 0 -10px;
+  }
+
+  .alice-carousel__stage {
+    display: flex
   }
 
   .alice-carousel__wrapper {
@@ -78,6 +115,9 @@ const StyledReviews = styled.section`
   }
 
   li.alice-carousel__stage-item {
+    flex: 1 0 auto;
+    height: auto;
+
     &:nth-child(odd) {
       ${StyledReviewsItem} {
         background-color: ${({theme}) => theme.colors.colorSecondary};
@@ -108,8 +148,11 @@ const StyledReviews = styled.section`
       }
     }
   }
+
   .alice-carousel__next-btn,
-  .alice-carousel__prev-btn{
+  .alice-carousel__prev-btn {
+    position: absolute;
+    top: -80px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -119,15 +162,35 @@ const StyledReviews = styled.section`
     border: 1px solid rgba(27, 27, 27, 0.16);
     cursor: pointer;
     transition: all .3s;
-  }
-  .alice-carousel__next-btn{
-    svg{
-      transform: translate(2px,1px);
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #fff;
+        border-color: #fff;
+      }
+    }
+    @media ${({theme}) => theme.media.mobile} {
+      position: static;
+      top: auto;
     }
   }
-  .alice-carousel__prev-btn{
-    svg{
-      transform: translate(-2px,1px);
+
+  .alice-carousel__next-btn {
+    right: 0;
+
+    svg {
+      transform: translate(2px, 1px);
+    }
+  }
+
+  .alice-carousel__prev-btn {
+    right: 50px;
+    @media ${({theme}) => theme.media.mobile} {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    svg {
+      transform: translate(-2px, 1px);
     }
   }
 `

@@ -47,7 +47,7 @@ const StyledWorks = styled.section`
   position: relative;
 
   ${Decor} {
-    z-index: 0;
+    z-index: 1;
     overflow: visible;
 
     svg:nth-child(1) {
