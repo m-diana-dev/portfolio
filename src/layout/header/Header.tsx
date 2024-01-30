@@ -46,7 +46,22 @@ const StyledHeader = styled.header`
       justify-content: flex-end;
       margin-right: 15px;
     }
+
+    a {
+      @media screen and (max-width: 370px) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    svg {
+      @media screen and (max-width: 370px) {
+        width: 22px;
+        height: 22px;
+      }
+    }
   }
+}
 `
 const Menu = styled.div`
   @media ${({theme}) => theme.media.mobile} {

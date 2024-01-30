@@ -19,17 +19,22 @@ export const SocialList = styled.ul`
 `
 const SocialItem = styled.li`
   &:not(:last-child){
-    margin-right: 10px;
+    margin-right: 3px;
   }
 `
 const SocialLink = styled.a`
   display: block;
   color: ${({theme})=>theme.colors.colorMain};
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all .3s;
   @media (any-hover: hover){
     &:hover{
-      svg{
-        fill: ${({theme})=>theme.colors.colorMain};
-      }
+       background-color: ${({theme})=>theme.colors.colorSecondary};
     }
   }
   svg{
