@@ -7,8 +7,8 @@ import imgPng from "../../../assets/images/about/main.png";
 import imgWebp from "../../../assets/images/about/main.webp";
 import {AboutItem} from "../../../layout/sections/about/aboutItem/AboutItem.tsx";
 import {Icon} from "../../../components/icon/Icon.tsx";
-import {font} from "../../../styles/Common.ts";
 import {Decor} from "../../../components/Decor.ts";
+import {SectionText} from "../../../components/SectionText.ts";
 
 export const About = () => {
     return (
@@ -18,12 +18,12 @@ export const About = () => {
                     <AboutContent>
                         <SectionSubtitle>Обо мне</SectionSubtitle>
                         <SectionTitle>Front-End Developer, сочетающий искусство и технологии</SectionTitle>
-                        <AboutText>
+                        <SectionText>
                             Привет, я Диана, фронтенд-разработчик и верстальщик! Специализируюсь на создании визуально
                             привлекательных и удобных для пользователя веб-сайтов. Постоянно обучаюсь и слежу за
                             тенденциями отрасли, поэтому в работе использую актуальный стект технологий. Мои основные
                             инструменты: HTML, CSS, JavaScript, TypeScript, React.
-                        </AboutText>
+                        </SectionText>
                         <AboutItems>
                             <AboutItem value={'150+'} title={'веб-сайтов разработано'}/>
                             <AboutItem value={'4+'} title={`года\nопыта`}/>
@@ -71,33 +71,35 @@ const AboutContent = styled.div`
   ${SectionTitle} {
     margin-bottom: 15px;
   }
-`
-const AboutText = styled.p`
-  ${font({fontMin: 16, fontMax: 19, lineHeight: 1.3})};
-  margin-bottom: 35px;
-  @media ${({theme}) => theme.media.mobile} {
-    margin-bottom: 20px;
+
+  ${SectionText} {
+    margin-bottom: 35px;
+    @media ${({theme}) => theme.media.mobile} {
+      margin-bottom: 20px;
+    }
   }
 `
 const AboutImg = styled.div`
   max-width: 525px;
   width: 100%;
   position: relative;
-  @media screen and (max-width: 1200px){
+  @media screen and (max-width: 1200px) {
     max-width: 430px;
   }
-  
-  img{
+
+  img {
     width: 100%;
     object-fit: contain;
   }
+
   ${Decor} {
     z-index: 1;
     overflow: visible;
+
     svg:nth-child(1) {
       top: 40px;
       right: 0;
-      @media screen and (max-width: 1200px){
+      @media screen and (max-width: 1200px) {
         width: 90px;
         height: 75px;
         right: 20px;
@@ -110,10 +112,11 @@ const AboutImg = styled.div`
         height: 65px;
       }
     }
+
     svg:nth-child(2) {
       bottom: -30px;
       left: 100px;
-      @media screen and (max-width: 1200px){
+      @media screen and (max-width: 1200px) {
         width: 110px;
         height: 111px;
       }

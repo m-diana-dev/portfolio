@@ -6,6 +6,7 @@ import styled from "styled-components";
 import {Services} from "./layout/sections/services/Services.tsx";
 import {Works} from "./layout/sections/works/Works.tsx";
 import {Reviews} from "./layout/sections/reviews/Reviews.tsx";
+import {Contacts} from "./layout/sections/contacts/Contacts.tsx";
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
                 <Services/>
                 <Works/>
                 <Reviews/>
+                <Contacts/>
             </Sections>
         </>
     )
