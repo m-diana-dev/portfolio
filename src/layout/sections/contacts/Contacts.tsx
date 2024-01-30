@@ -76,6 +76,9 @@ const StyledContacts = styled.section`
         left: auto;
         right: 70px;
       }
+      @media ${({theme}) => theme.media.mobileSmall} {
+        right: 20px;
+      }
     }
   }
 

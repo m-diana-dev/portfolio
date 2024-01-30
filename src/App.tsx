@@ -7,6 +7,7 @@ import {Services} from "./layout/sections/services/Services.tsx";
 import {Works} from "./layout/sections/works/Works.tsx";
 import {Reviews} from "./layout/sections/reviews/Reviews.tsx";
 import {Contacts} from "./layout/sections/contacts/Contacts.tsx";
+import {Footer} from "./layout/footer/Footer.tsx";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
                 <Reviews/>
                 <Contacts/>
             </Sections>
+            <Footer/>
         </>
     )
 }
