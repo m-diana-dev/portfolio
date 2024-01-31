@@ -34,6 +34,14 @@ const StyledFooter = styled.footer`
       margin-bottom: 10px;
     }
   }
+  a{
+    transition: all .3s;
+    @media (any-hover: hover){
+      &:hover{
+        color: ${({theme})=>theme.colors.colorMain};
+      }
+    }
+  }
 `
 
 const FooterText = styled.small`

@@ -170,6 +170,7 @@ const StyledReviews = styled.section`
     }
     @media ${({theme}) => theme.media.mobile} {
       position: static;
+      margin-top: 10px;
       top: auto;
     }
   }

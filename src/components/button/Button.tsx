@@ -19,7 +19,7 @@ export const StyledButton = styled.button`
   align-items: center;
   border-radius: 24px;
   background: ${({theme})=>theme.colors.title};
-  color: ${({theme})=>theme.colors.secondaryBg};
+  color: ${({theme})=>theme.colors.primaryBg};
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 140%; 

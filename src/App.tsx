@@ -8,6 +8,7 @@ import {Works} from "./layout/sections/works/Works.tsx";
 import {Reviews} from "./layout/sections/reviews/Reviews.tsx";
 import {Contacts} from "./layout/sections/contacts/Contacts.tsx";
 import {Footer} from "./layout/footer/Footer.tsx";
+import {StyledButton} from "./components/button/Button.tsx";
 
 function App() {
 
@@ -33,10 +34,16 @@ const Sections = styled.div`
     padding: 110px 0;
 
     &:nth-child(odd){
-      background-color: ${({theme}) => theme.colors.primaryBg}
+      background-color: ${({theme}) => theme.colors.primaryBg};
+      ${StyledButton}{
+        color: ${({theme}) => theme.colors.primaryBg};
+      }
     }
     &:nth-child(even){
-      background-color: ${({theme}) => theme.colors.secondaryBg}
+      background-color: ${({theme}) => theme.colors.secondaryBg};
+      ${StyledButton}{
+        color: ${({theme}) => theme.colors.secondaryBg};
+      }
     }
 
     @media ${({theme}) => theme.media.tablet} {

@@ -42,6 +42,12 @@ const StyledAboutItem = styled.div`
   ${SectionTitle}{
     color: ${({theme}) => theme.colors.colorMain};
     margin-bottom: 8px;
+    svg{
+      @media ${({theme}) => theme.media.mobileSmall} {
+        width: 35px;
+        height: 16px;
+      }
+    }
   }
 `
 const AboutItemTitle = styled.div`

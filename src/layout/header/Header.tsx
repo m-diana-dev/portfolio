@@ -156,16 +156,16 @@ const MenuLink = styled.a`
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 0;
     height: 3px;
+    border-radius: 2px;
     background-color: ${({theme})=>theme.colors.colorMain};
-    opacity: 0;
     transition: all .3s;
   }
   @media (any-hover: hover){
     &:hover{
       &::before{
-        opacity: 1;
+        width: 100%;
       }
     }
   }

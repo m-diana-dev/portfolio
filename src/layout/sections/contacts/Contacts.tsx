@@ -21,7 +21,8 @@ export const Contacts = () => {
                         <SectionSubtitle>Контакты</SectionSubtitle>
                         <SectionTitle>Готовы начать свой проект?</SectionTitle>
                         <SectionText>
-                            Чтобы связаться со мной, напишите мне в любой из мессенджеров или на почту, которые представлены ниже, либо заполните форму на сайте. Я отвечу Вам в ближайщее время!
+                            Чтобы связаться со мной, напишите мне в любой из мессенджеров или на почту, которые
+                            представлены ниже, либо заполните форму на сайте. Я отвечу Вам в ближайщее время!
                         </SectionText>
                         <Social items={['telegram', 'whatsapp', 'mail2']}/>
                     </ContactsContent>
@@ -31,7 +32,8 @@ export const Contacts = () => {
                         <Field placeholder={'Сообщение'} as={'textarea'}/>
                         <FlexWrapp align={'center'} wrap={'wrap'}>
                             <Button>Отправить</Button>
-                            <FormNote>Отправляя форму, Вы соглашаетесь с политикой конфиденциальности</FormNote>
+                            <FormNote>Отправляя форму, Вы соглашаетесь с <FormLink>политикой
+                                конфиденциальности</FormLink></FormNote>
                         </FlexWrapp>
                     </ContactsForm>
                 </FlexWrapp>
@@ -82,8 +84,8 @@ const StyledContacts = styled.section`
     }
   }
 
-  ${Container}{
-    >${FlexWrapp} {
+  ${Container} {
+    > ${FlexWrapp} {
       @media ${({theme}) => theme.media.mobile} {
         flex-direction: column;
       }
@@ -107,11 +109,13 @@ const ContactsForm = styled.form`
   @media ${({theme}) => theme.media.mobile} {
     max-width: 100%;
   }
-  textarea{
+
+  textarea {
     resize: none;
     height: 140px;
   }
-  ${StyledButton}{
+
+  ${StyledButton} {
     @media ${({theme}) => theme.media.mobileSmall} {
       width: 100%;
       margin-bottom: 10px;
@@ -158,5 +162,14 @@ const FormNote = styled.small`
     max-width: 100%;
     margin-left: 0;
     font-size: 12px;
+  }
+`
+const FormLink = styled.a`
+  cursor: pointer;
+  transition: all .3s;
+  @media (any-hover: hover) {
+    &:hover {
+      color: ${({theme}) => theme.colors.colorMain};
+    }
   }
 `

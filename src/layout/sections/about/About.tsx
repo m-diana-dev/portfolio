@@ -125,10 +125,7 @@ const AboutImg = styled.div`
         bottom: 10px;
       }
       @media ${({theme}) => theme.media.mobileSmall} {
-        width: 90px;
-        height: 80px;
-        left: -40px;
-        bottom: 10px;
+        display: none;
       }
     }
   }
