@@ -31,6 +31,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    overflow: ${(props) => (props.theme.isMenuOpen ? 'hidden' : 'auto')};
+    position: relative;
     color: ${({theme})=>theme.colors.text};
     line-height: 1;
     font-family: 'Roboto', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -40,6 +42,19 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    &::before{
+      content: '';
+      position: fixed;
+      top: 100px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+      pointer-events: none;
+      opacity: ${(props) => (props.theme.isMenuOpen ? '1' : '0')};
+      transition: all .3s;
+    }
   }
 
   input,

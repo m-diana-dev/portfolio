@@ -9,39 +9,49 @@ import {Reviews} from "./layout/sections/reviews/Reviews.tsx";
 import {Contacts} from "./layout/sections/contacts/Contacts.tsx";
 import {Footer} from "./layout/footer/Footer.tsx";
 import {StyledButton} from "./components/button/Button.tsx";
+import {Theme} from "./styles/Theme.tsx";
+import {useState} from "react";
 
 function App() {
-
+    const [openMenu, setOpenMenu] = useState(false)
+    const isMenuOpenCallback = (isMenuOpen: boolean) => {
+        setOpenMenu(isMenuOpen)
+    }
     return (
         <>
-            <Header/>
-            <Main/>
-            <Tools/>
-            <Sections>
-                <About/>
-                <Services/>
-                <Works/>
-                <Reviews/>
-                <Contacts/>
-            </Sections>
-            <Footer/>
+            <Theme isMenuOpen={openMenu}>
+                <Header isMenuOpenCallback={isMenuOpenCallback} openMenu={openMenu}/>
+                <Main/>
+                <Tools/>
+                <Sections>
+                    <About/>
+                    <Services/>
+                    <Works/>
+                    <Reviews/>
+                    <Contacts/>
+                </Sections>
+                <Footer/>
+            </Theme>
         </>
     )
 }
 
 const Sections = styled.div`
-  section{
+  section {
     padding: 110px 0;
 
-    &:nth-child(odd){
+    &:nth-child(odd) {
       background-color: ${({theme}) => theme.colors.primaryBg};
-      ${StyledButton}{
+
+      ${StyledButton} {
         color: ${({theme}) => theme.colors.primaryBg};
       }
     }
-    &:nth-child(even){
+
+    &:nth-child(even) {
       background-color: ${({theme}) => theme.colors.secondaryBg};
-      ${StyledButton}{
+
+      ${StyledButton} {
         color: ${({theme}) => theme.colors.secondaryBg};
       }
     }

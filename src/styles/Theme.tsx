@@ -18,7 +18,8 @@ declare module 'styled-components' {
             tablet: string,
             mobile: string,
             mobileSmall: string,
-        }
+        },
+        isMenuOpen: boolean
     }
 }
 export const theme = {
@@ -41,10 +42,11 @@ export const theme = {
 
 type ThemeType= {
     children: ReactNode
+    isMenuOpen: boolean
 }
-export const Theme: FC<ThemeType> = ({children}) => {
+export const Theme: FC<ThemeType> = ({children, isMenuOpen}) => {
     return (
-        <ThemeProvider theme={theme}>
+        <ThemeProvider theme={{ ...theme, isMenuOpen }}>
             <GlobalStyle/>
             {children}
         </ThemeProvider>

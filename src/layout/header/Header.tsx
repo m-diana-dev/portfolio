@@ -3,18 +3,29 @@ import {Container} from "../../components/Container.js";
 import {Logo} from "../../components/logo/Logo.tsx";
 import {Social, SocialList} from "../../components/social/Social.tsx";
 import {FlexWrapp} from "../../components/FlexWrapp.ts";
+import {FC, useState} from "react";
 
-export const Header = () => {
+type HeaderPropsType = {
+    isMenuOpenCallback: (isMenuOpen: boolean) => void
+    openMenu: boolean
+}
+export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
+    const [isMenuOpen, setIsMenuOpen] = useState(openMenu);
     const menuItems: string[] = ['Обо мне', 'Услуги', 'Проекты', 'Отзывы', 'Контакты']
+
+    const onBurgerHandler = () => {
+        setIsMenuOpen(!isMenuOpen)
+        isMenuOpenCallback(!isMenuOpen)
+    }
 
     return (
         <StyledHeader>
             <Container>
                 <FlexWrapp justify={'space-between'}>
                     <Logo/>
-                    <Menu>
-                        <MenuBurger/>
-                        <MenuBody isOpen={false}>
+                    <Menu isOpen={isMenuOpen}>
+                        <MenuBurger onClick={onBurgerHandler}><span></span></MenuBurger>
+                        <MenuBody>
                             <MenuList>
                                 {menuItems.map(el => <MenuItem><MenuLink href="">{el}</MenuLink></MenuItem>)}
                             </MenuList>
@@ -63,21 +74,50 @@ const StyledHeader = styled.header`
   }
 }
 `
-const Menu = styled.div`
+const Menu = styled.div<{isOpen: boolean}>`
+  ${props => props.isOpen && css<{ isOpen: boolean }>`
+    ${MenuBody}{
+      top: 54px;
+      @media screen and (max-width: 370px) {
+        top: 49px;
+      }
+    }
+    ${MenuBurger}{
+      span {
+        transform: scale(0);
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+        top: calc(50% - 1px);
+      }
+
+      &::after {
+        transform: rotate(45deg);
+        bottom: calc(50% - 1px);
+      }
+    }
+  `} 
   @media ${({theme}) => theme.media.mobile} {
     order: 3;
   }
 `
-const MenuBurger = styled.span`
+const MenuBurger = styled.button`
   display: none;
   position: relative;
-  width: 18px;
-  height: 2px;
-  background-color: ${({theme}) => theme.colors.title};
-  border-radius: 3px;
+  transition: all .3s;
 
   @media ${({theme}) => theme.media.mobile} {
     display: block;
+  }
+  
+  span{
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: ${({theme}) => theme.colors.colorMain};
+    border-radius: 2px;
+    transition: all .3s;
   }
 
   &::before,
@@ -90,6 +130,7 @@ const MenuBurger = styled.span`
     top: 0;
     left: 0;
     border-radius: 2px;
+    transition: all .3s;
   }
 
   &::after {
@@ -102,7 +143,7 @@ const MenuBurger = styled.span`
 }
 `
 
-const MenuBody = styled.nav<{isOpen: boolean}>`
+const MenuBody = styled.nav`
   @media ${({theme}) => theme.media.mobile} {
     display: flex;
     flex-direction: column;
@@ -117,9 +158,6 @@ const MenuBody = styled.nav<{isOpen: boolean}>`
     border-radius: 0 0 24px 24px;
     transition: all 0.2s ease 0s;
     z-index: 4;
-    ${props=>props.isOpen && css<{isOpen: boolean}>`
-      top: 48px;
-    `}
   }
 `
 const MenuList = styled.ul`
