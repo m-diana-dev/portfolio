@@ -3,19 +3,17 @@ import {Container} from "../../components/Container.js";
 import {Logo} from "../../components/logo/Logo.tsx";
 import {Social, SocialList} from "../../components/social/Social.tsx";
 import {FlexWrapp} from "../../components/FlexWrapp.ts";
-import {FC, useState} from "react";
+import {FC} from "react";
 
 type HeaderPropsType = {
     isMenuOpenCallback: (isMenuOpen: boolean) => void
     openMenu: boolean
 }
 export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
-    const [isMenuOpen, setIsMenuOpen] = useState(openMenu);
     const menuItems: string[] = ['Обо мне', 'Услуги', 'Проекты', 'Отзывы', 'Контакты']
 
     const onBurgerHandler = () => {
-        setIsMenuOpen(!isMenuOpen)
-        isMenuOpenCallback(!isMenuOpen)
+        isMenuOpenCallback(!openMenu)
     }
 
     return (
@@ -23,7 +21,7 @@ export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
             <Container>
                 <FlexWrapp justify={'space-between'}>
                     <Logo/>
-                    <Menu isOpen={isMenuOpen}>
+                    <Menu isOpen={openMenu}>
                         <MenuBurger onClick={onBurgerHandler}><span></span></MenuBurger>
                         <MenuBody>
                             <MenuList>
