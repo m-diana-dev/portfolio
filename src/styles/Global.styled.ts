@@ -29,6 +29,18 @@ export const GlobalStyle = createGlobalStyle`
     min-width: 320px;
     font-size: 20px;
   }
+  
+  html{
+    ::-webkit-scrollbar {
+      width: 7px;
+      background-color: rgba(20, 20, 20, 0.16);
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background-color: ${({theme})=>theme.colors.colorMain};
+      border-radius: 3px;
+    }
+  }
 
   body {
     overflow: ${(props) => (props.theme.isMenuOpen ? 'hidden' : 'auto')};
@@ -55,6 +67,13 @@ export const GlobalStyle = createGlobalStyle`
       opacity: ${(props) => (props.theme.isMenuOpen ? '1' : '0')};
       transition: all .3s;
     }
+  }
+
+  ::selection {
+    background: ${({theme})=>theme.colors.colorSecondary};
+  }
+  ::-moz-selection {
+    background: ${({theme})=>theme.colors.colorSecondary};
   }
 
   input,
