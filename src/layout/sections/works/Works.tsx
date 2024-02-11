@@ -24,17 +24,17 @@ export const Works = () => {
 
     return (
         <StyledWorks>
-            <Decor>
-                <Icon id={'decor4.4'} width={'128'} height={'112'} viewBox={'0 0 120 120'}/>
-                <Icon id={'decor6.1'} width={'174'} height={'174'} viewBox={'0 0 150 150'}/>
-            </Decor>
+                <Decor>
+                    <Icon id={'decor4.4'} width={'128'} height={'112'} viewBox={'0 0 120 120'}/>
+                    <Icon id={'decor6.1'} width={'174'} height={'174'} viewBox={'0 0 150 150'}/>
+                </Decor>
             <Container>
                 <SectionSubtitle>Проекты</SectionSubtitle>
                 <SectionTitle>Некоторые мои работы</SectionTitle>
                 <Tabs>
                     {TabsItems.map(el => <TabsItem>
                         <TabsLink active={currentFilterStatus === el.label}
-                            onClick={() => ChangeFilterStatus(el.label)}>{el.title}</TabsLink>
+                                  onClick={() => ChangeFilterStatus(el.label)}>{el.title}</TabsLink>
                     </TabsItem>)}
                 </Tabs>
                 <WorkItems currentFilterStatus={currentFilterStatus}/>

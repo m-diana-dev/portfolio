@@ -3,12 +3,14 @@ import {WorkItem} from "../../works/workItems/WorkItem.tsx";
 import img1 from "../../../../assets/images/works/1.jpg"
 import {LabelType} from "../../../../layout/sections/works/Works.tsx";
 import {FC} from "react";
+import {AnimatePresence, motion} from "framer-motion";
 
 
 type WorkItemsPropsType = {
     currentFilterStatus: LabelType
 }
 type WorkItemsDataType = {
+    id: number
     img: string
     imgWebp: string
     title: string
@@ -17,11 +19,11 @@ type WorkItemsDataType = {
 
 export const WorkItems: FC<WorkItemsPropsType> = ({currentFilterStatus}) => {
     const workItemsData: WorkItemsDataType[] = [
-        {img: img1, imgWebp: '', title: 'landing', type: 'landing'},
-        {img: img1, imgWebp: '', title: 'corporate', type: 'corporate'},
-        {img: img1, imgWebp: '', title: 'wordpress', type: 'wordpress'},
-        {img: img1, imgWebp: '', title: 'app', type: 'app'},
-        {img: img1, imgWebp: '', title: 'store', type: 'store'},
+        {id: 1, img: img1, imgWebp: '', title: 'landing', type: 'landing'},
+        {id: 2, img: img1, imgWebp: '', title: 'corporate', type: 'corporate'},
+        {id: 3, img: img1, imgWebp: '', title: 'wordpress', type: 'wordpress'},
+        {id: 4, img: img1, imgWebp: '', title: 'app', type: 'app'},
+        {id: 5, img: img1, imgWebp: '', title: 'store', type: 'store'},
     ]
 
     let filteredWorks = workItemsData.filter(el => el.type === 'landing')
@@ -40,7 +42,9 @@ export const WorkItems: FC<WorkItemsPropsType> = ({currentFilterStatus}) => {
 
     return (
         <StyledWorkItems>
-            {filteredWorks.map(el => <WorkItem img={el.img} imgWebp={el.imgWebp} title={el.title}/>)}
+            <AnimatePresence>
+                {filteredWorks.map(el => <motion.div layout={true}><WorkItem key={el.id} img={el.img} imgWebp={el.imgWebp} title={el.title}/></motion.div>)}
+            </AnimatePresence>
         </StyledWorkItems>
     );
 }

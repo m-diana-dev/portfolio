@@ -11,10 +11,10 @@ export const Services = () => {
     return (
         <StyledServices>
             <Container>
-                <Decor>
-                    <Icon id={'decor3.1'} width={'267'} height={'267'} viewBox={'0 0 250 250'}/>
-                    <Icon id={'decor6.3'} width={'174'} height={'174'} viewBox={'0 0 160 160'}/>
-                </Decor>
+                    <Decor>
+                        <Icon id={'decor3.1'} width={'267'} height={'267'} viewBox={'0 0 250 250'}/>
+                        <Icon id={'decor6.3'} width={'174'} height={'174'} viewBox={'0 0 160 160'}/>
+                    </Decor>
                 <SectionSubtitle>услуги</SectionSubtitle>
                 <SectionTitle>Мой опыт</SectionTitle>
                 <ServicesItems>
@@ -43,6 +43,7 @@ export const Services = () => {
 
 const StyledServices = styled.section`
   overflow: hidden;
+
   ${SectionSubtitle} {
     text-align: center;
     position: relative;
@@ -72,7 +73,7 @@ const StyledServices = styled.section`
     svg:nth-child(1) {
       top: -10px;
       right: 20px;
-      @media screen and (max-width: 1200px){
+      @media screen and (max-width: 1200px) {
         width: 200px;
         height: 200px;
         top: 10px;
@@ -87,7 +88,7 @@ const StyledServices = styled.section`
     svg:nth-child(2) {
       bottom: 10px;
       left: -18px;
-      @media screen and (max-width: 1200px){
+      @media screen and (max-width: 1200px) {
         width: 140px;
         height: 140px;
       }
