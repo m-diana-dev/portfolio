@@ -1,15 +1,16 @@
 import {FC} from "react";
 import styled from "styled-components";
 import {Button, StyledButton} from "../../../../components/button/Button.tsx";
+import {HTMLMotionProps, motion} from "framer-motion";
 
 type WorkItemPropsType = {
-    img: string
-    imgWebp: string
-    title: string
-}
-export const WorkItem: FC<WorkItemPropsType> = ({img, imgWebp, title}) => {
+    img?: string
+    imgWebp?: string
+    title?: string,
+} & HTMLMotionProps<"div">
+export const WorkItem: FC<WorkItemPropsType> = ({img, imgWebp, title, ...restProps}) => {
     return (
-        <StyledWorkItem>
+        <StyledWorkItem {...restProps}>
             <WorkItemImg>
                 <picture>
                     <source srcSet={imgWebp} type="image/webp"/>
@@ -22,7 +23,7 @@ export const WorkItem: FC<WorkItemPropsType> = ({img, imgWebp, title}) => {
     );
 }
 
-const StyledWorkItem = styled.article`
+const StyledWorkItem = styled(motion.div)<WorkItemPropsType>`
   width: calc(33.3333% - 20px);
   margin-left: 20px;
   margin-bottom: 20px;

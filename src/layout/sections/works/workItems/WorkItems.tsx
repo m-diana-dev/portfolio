@@ -3,7 +3,7 @@ import {WorkItem} from "../../works/workItems/WorkItem.tsx";
 import img1 from "../../../../assets/images/works/1.jpg"
 import {LabelType} from "../../../../layout/sections/works/Works.tsx";
 import {FC} from "react";
-import {AnimatePresence, motion} from "framer-motion";
+import {AnimatePresence} from "framer-motion";
 
 
 type WorkItemsPropsType = {
@@ -24,6 +24,8 @@ export const WorkItems: FC<WorkItemsPropsType> = ({currentFilterStatus}) => {
         {id: 3, img: img1, imgWebp: '', title: 'wordpress', type: 'wordpress'},
         {id: 4, img: img1, imgWebp: '', title: 'app', type: 'app'},
         {id: 5, img: img1, imgWebp: '', title: 'store', type: 'store'},
+        {id: 6, img: img1, imgWebp: '', title: 'store', type: 'store'},
+        {id: 7, img: img1, imgWebp: '', title: 'store', type: 'store'},
     ]
 
     let filteredWorks = workItemsData.filter(el => el.type === 'landing')
@@ -43,7 +45,11 @@ export const WorkItems: FC<WorkItemsPropsType> = ({currentFilterStatus}) => {
     return (
         <StyledWorkItems>
             <AnimatePresence>
-                {filteredWorks.map(el => <motion.div layout={true}><WorkItem key={el.id} img={el.img} imgWebp={el.imgWebp} title={el.title}/></motion.div>)}
+                {filteredWorks.map(el => <WorkItem layout={true}
+                                                   initial={{ opacity: 0, rotate: 30 }}
+                                                   animate={{ opacity: 1, rotate: 0 }}
+                                                   transition={{ duration: 0.4 }}
+                                                   key={el.id} img={el.img} imgWebp={el.imgWebp} title={el.title}/>)}
             </AnimatePresence>
         </StyledWorkItems>
     );
