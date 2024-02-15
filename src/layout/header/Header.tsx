@@ -4,16 +4,29 @@ import {Logo} from "../../components/logo/Logo.tsx";
 import {Social, SocialList} from "../../components/social/Social.tsx";
 import {FlexWrapp} from "../../components/FlexWrapp.ts";
 import {FC} from "react";
+import {Link} from "react-scroll";
 
 type HeaderPropsType = {
     isMenuOpenCallback: (isMenuOpen: boolean) => void
     openMenu: boolean
 }
 export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
-    const menuItems: string[] = ['Обо мне', 'Услуги', 'Проекты', 'Отзывы', 'Контакты']
+    const menuItems = [
+        {title: 'Обо мне', href: 'about'},
+        {title: 'Услуги', href: 'services'},
+        {title: 'Проекты', href: 'projects'},
+        {title: 'Отзывы', href: 'reviews'},
+        {title: 'Контакты', href: 'contacts'}
+    ]
 
     const onBurgerHandler = () => {
         isMenuOpenCallback(!openMenu)
+    }
+
+    const onLinkHandler = () => {
+        if(openMenu){
+            isMenuOpenCallback(!openMenu)
+        }
     }
 
     return (
@@ -25,7 +38,14 @@ export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
                         <MenuBurger onClick={onBurgerHandler}><span></span></MenuBurger>
                         <MenuBody>
                             <MenuList>
-                                {menuItems.map(el => <MenuItem><MenuLink href="">{el}</MenuLink></MenuItem>)}
+                                {menuItems.map(el => <MenuItem>
+                                    <MenuLink onClick={onLinkHandler}
+                                              activeClass="_active"
+                                              spy={true}
+                                              smooth={true}
+                                              offset={-50}
+                                              to={el.href}>{el.title}</MenuLink>
+                                </MenuItem>)}
                             </MenuList>
                         </MenuBody>
                     </Menu>
@@ -72,15 +92,16 @@ const StyledHeader = styled.header`
   }
 }
 `
-const Menu = styled.div<{isOpen: boolean}>`
+const Menu = styled.div<{ isOpen: boolean }>`
   ${props => props.isOpen && css<{ isOpen: boolean }>`
-    ${MenuBody}{
+    ${MenuBody} {
       top: 54px;
       @media screen and (max-width: 370px) {
         top: 49px;
       }
     }
-    ${MenuBurger}{
+
+    ${MenuBurger} {
       span {
         transform: scale(0);
       }
@@ -95,8 +116,7 @@ const Menu = styled.div<{isOpen: boolean}>`
         bottom: calc(50% - 1px);
       }
     }
-  `} 
-  @media ${({theme}) => theme.media.mobile} {
+  `} @media ${({theme}) => theme.media.mobile} {
     order: 3;
   }
 `
@@ -108,8 +128,8 @@ const MenuBurger = styled.button`
   @media ${({theme}) => theme.media.mobile} {
     display: block;
   }
-  
-  span{
+
+  span {
     display: block;
     width: 18px;
     height: 2px;
@@ -184,10 +204,11 @@ const MenuItem = styled.li`
     }
   }
 `
-const MenuLink = styled.a`
+const MenuLink = styled(Link)`
   padding-bottom: 4px;
   position: relative;
-  &::before{
+
+  &::before {
     content: '';
     position: absolute;
     left: 0;
@@ -195,12 +216,21 @@ const MenuLink = styled.a`
     width: 0;
     height: 3px;
     border-radius: 2px;
-    background-color: ${({theme})=>theme.colors.colorMain};
+    background-color: ${({theme}) => theme.colors.colorMain};
     transition: all .3s;
   }
-  @media (any-hover: hover){
-    &:hover{
-      &::before{
+
+  &._active {
+    &::before {
+      @media ${({theme}) => theme.media.mobile} {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::before {
         width: 100%;
       }
     }

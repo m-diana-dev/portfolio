@@ -9,7 +9,7 @@ import {Icon} from "../../../components/icon/Icon.tsx";
 
 export const Services = () => {
     return (
-        <StyledServices>
+        <StyledServices id='services'>
             <Container>
                     <Decor>
                         <Icon id={'decor3.1'} width={'267'} height={'267'} viewBox={'0 0 250 250'}/>

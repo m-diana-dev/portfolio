@@ -11,7 +11,7 @@ import {Icon} from "../../../components/icon/Icon.tsx";
 
 export const Contacts = () => {
     return (
-        <StyledContacts>
+        <StyledContacts id='contacts'>
             <Container>
                 <Decor>
                     <Icon id={'decor5.2'} width={'142'} height={'142'} viewBox={'0 0 140 140'}/>

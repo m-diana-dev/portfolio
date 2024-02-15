@@ -12,7 +12,7 @@ import {SectionText} from "../../../components/SectionText.ts";
 
 export const About = () => {
     return (
-        <StyledAbout>
+        <StyledAbout id='about'>
             <Container>
                 <FlexWrapp justify={'space-between'} align={'center'}>
                     <AboutContent>

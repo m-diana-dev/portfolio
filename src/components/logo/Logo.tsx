@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import {animateScroll as scroll} from "react-scroll";
 
 export const Logo = () => {
     return (
-        <StyledLogo href='#'>
+        <StyledLogo onClick={()=>{scroll.scrollToTop()}}>
             {'<devDiana />'}
         </StyledLogo>
     );

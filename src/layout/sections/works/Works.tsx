@@ -23,7 +23,7 @@ export const Works = () => {
     const ChangeFilterStatus = (label: LabelType) => setCurrentFilterStatus(label)
 
     return (
-        <StyledWorks>
+        <StyledWorks id='projects'>
                 <Decor>
                     <Icon id={'decor4.4'} width={'128'} height={'112'} viewBox={'0 0 120 120'}/>
                     <Icon id={'decor6.1'} width={'174'} height={'174'} viewBox={'0 0 150 150'}/>

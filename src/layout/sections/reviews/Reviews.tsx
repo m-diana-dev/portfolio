@@ -38,7 +38,7 @@ export const Reviews = () => {
         },
     }
     return (
-        <StyledReviews>
+        <StyledReviews id='reviews'>
             <Decor>
                 <Icon id={'decor1.2'} width={'200'} height={'200'} viewBox={'0 0 270 270'}/>
             </Decor>
