@@ -1,6 +1,6 @@
 import {FC} from "react";
 import styled from "styled-components";
-import {Button, StyledButton} from "../../../../components/button/Button.tsx";
+import {Button} from "../../../../components/button/Button.ts";
 import {HTMLMotionProps, motion} from "framer-motion";
 
 type WorkItemPropsType = {
@@ -71,7 +71,7 @@ const WorkItemImg = styled.div`
 
   &:hover {
     &::before,
-    ${StyledButton} {
+    ${Button} {
       opacity: 1;
       pointer-events: auto;
     }
@@ -91,7 +91,7 @@ const WorkItemImg = styled.div`
     }
   }
 
-  ${StyledButton} {
+  ${Button} {
     position: absolute;
     z-index: 2;
     top: 50%;

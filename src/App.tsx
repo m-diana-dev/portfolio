@@ -8,7 +8,7 @@ import {Works} from "./layout/sections/works/Works.tsx";
 import {Reviews} from "./layout/sections/reviews/Reviews.tsx";
 import {Contacts} from "./layout/sections/contacts/Contacts.tsx";
 import {Footer} from "./layout/footer/Footer.tsx";
-import {StyledButton} from "./components/button/Button.tsx";
+import {Button} from "./components/button/Button.ts";
 import {Theme} from "./styles/Theme.tsx";
 import {useState} from "react";
 
@@ -43,7 +43,7 @@ const Sections = styled.div`
     &:nth-child(odd) {
       background-color: ${({theme}) => theme.colors.primaryBg};
 
-      ${StyledButton} {
+      ${Button} {
         color: ${({theme}) => theme.colors.primaryBg};
       }
     }
@@ -51,7 +51,7 @@ const Sections = styled.div`
     &:nth-child(even) {
       background-color: ${({theme}) => theme.colors.secondaryBg};
 
-      ${StyledButton} {
+      ${Button} {
         color: ${({theme}) => theme.colors.secondaryBg};
       }
     }

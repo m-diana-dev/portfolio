@@ -4,7 +4,7 @@ import {FlexWrapp} from "../../../components/FlexWrapp.ts";
 import {SectionSubtitle} from "../../../components/SectionSubtitle.ts";
 import {SectionTitle} from "../../../components/SectionTitle.ts";
 import {SectionText} from "../../../components/SectionText.ts";
-import {Button, StyledButton} from "../../../components/button/Button.tsx";
+import {Button} from "../../../components/button/Button.ts";
 import {Social} from "../../../components/social/Social.tsx";
 import {Decor} from "../../../components/Decor.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
@@ -115,7 +115,7 @@ const ContactsForm = styled.form`
     height: 140px;
   }
 
-  ${StyledButton} {
+  ${Button} {
     @media ${({theme}) => theme.media.mobileSmall} {
       width: 100%;
       margin-bottom: 10px;

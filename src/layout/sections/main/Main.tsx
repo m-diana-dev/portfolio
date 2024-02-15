@@ -1,9 +1,10 @@
-import {Button, StyledButton} from "../../../components/button/Button.tsx";
+import {Button} from "../../../components/button/Button.ts";
 import {Container} from "../../../components/Container.ts";
 import styled from "styled-components";
 import {font} from "../../../styles/Common.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {Decor} from "../../../components/Decor.ts";
+import {Link} from "react-scroll";
 
 export const Main = () => {
     return (
@@ -17,7 +18,7 @@ export const Main = () => {
                 <MainTitle>Объединение опыта в Digital с пиксельной точностью!</MainTitle>
                 <MainSubtitle>Превращение плоских макетов в удобные для пользователя веб-сайты с изюминкой
                     инноваций</MainSubtitle>
-                <Button>Связаться!</Button>
+                <Button as={Link} to="contacts" spy={true} smooth={true} offset={-50}>Связаться!</Button>
             </Container>
         </StyledMain>
     );
@@ -37,7 +38,8 @@ const StyledMain = styled.section`
     padding: 80px 0;
   }
 
-  ${StyledButton} {
+  ${Button} {
+    display: inline-flex;
     margin: 0 auto;
   }
 

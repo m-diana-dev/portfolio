@@ -2,10 +2,11 @@ import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {SectionSubtitle} from "../../../components/SectionSubtitle.ts";
 import {SectionTitle} from "../../../components/SectionTitle.ts";
-import {Button, StyledButton} from "../../../components/button/Button.tsx";
+import {Button} from "../../../components/button/Button.ts";
 import {ServicesItem} from "../../../layout/sections/services/servicesItem/ServicesItem.tsx";
 import {Decor} from "../../../components/Decor.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
+import {Link} from "react-scroll";
 
 export const Services = () => {
     return (
@@ -35,7 +36,7 @@ export const Services = () => {
                                   title={'Разработка на WordPress'}
                                   text={'Натяжка верстки на CMS WordPress, доработка уже существующих сайтов'}/>
                 </ServicesItems>
-                <Button>Связаться!</Button>
+                <Button as={Link} to="contacts" spy={true} smooth={true} offset={-50}>Связаться!</Button>
             </Container>
         </StyledServices>
     );
@@ -60,7 +61,8 @@ const StyledServices = styled.section`
     }
   }
 
-  ${StyledButton} {
+  ${Button} {
+    max-width: fit-content;
     margin: 0 auto;
     position: relative;
     z-index: 1;

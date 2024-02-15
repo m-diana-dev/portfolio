@@ -1,18 +1,6 @@
 import styled from "styled-components";
-import {ReactNode} from "react";
 
-type ButtonPropsType = {
-    children: ReactNode
-}
-export const Button = ({children}: ButtonPropsType) => {
-    return (
-        <StyledButton>
-            {children}
-        </StyledButton>
-    );
-}
-
-export const StyledButton = styled.button`
+export const Button = styled.button`
   display: flex;
   padding: 8px 24px;
   justify-content: center;
