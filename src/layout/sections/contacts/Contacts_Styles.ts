@@ -110,6 +110,12 @@ const Field = styled.input`
   &:focus-visible {
     outline: 1px solid ${({theme}) => theme.colors.title};
   }
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus,
+  &:-webkit-autofill:active  {
+    box-shadow: 0 0 0 30px #fff inset !important;
+  }
 
   @media ${({theme}) => theme.media.tablet} {
     font-size: 16px;
@@ -137,6 +143,14 @@ const FormLink = styled.a`
     }
   }
 `
+const FormError = styled.div`
+  //position: absolute;
+  //bottom: -15px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  color: #c40a0a;
+`
 
 export const S = {
     Contacts,
@@ -145,4 +159,5 @@ export const S = {
     Field,
     FormNote,
     FormLink,
+    FormError,
 }

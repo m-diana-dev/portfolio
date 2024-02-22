@@ -9,8 +9,27 @@ import {Decor} from "../../../components/Decor.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {S} from './Contacts_Styles.ts'
 import {FC} from "react";
+import emailjs from '@emailjs/browser';
+import {FieldValues, useForm} from "react-hook-form";
 
 export const Contacts: FC = () => {
+    const {
+        register,
+        reset,
+        formState: {
+            errors
+        },
+        handleSubmit
+    } = useForm({
+        mode: "onBlur"
+    })
+
+    const sendEmail = (formData: FieldValues) => {
+        emailjs
+            .send("service_6wn5ym2", "template_jbzaw0t", formData, "2W2y56b7dgQV4gbmH")
+        reset();
+    };
+
     return (
         <S.Contacts id='contacts'>
             <Container>
@@ -27,12 +46,27 @@ export const Contacts: FC = () => {
                         </SectionText>
                         <Social items={['telegram', 'whatsapp', 'mail2']}/>
                     </S.ContactsContent>
-                    <S.ContactsForm>
-                        <S.Field placeholder={'Имя'}/>
-                        <S.Field placeholder={'Телефон'}/>
-                        <S.Field placeholder={'Сообщение'} as={'textarea'}/>
+                    <S.ContactsForm onSubmit={handleSubmit(sendEmail)}>
+                        <S.Field {...register('name',
+                            {
+                                required: 'обязательное поле',
+                                minLength: {value: 2, message: 'минимальная длина - 2 символов'}
+                            })} placeholder={'Имя'}/>
+                        {errors?.name && <S.FormError>{errors.name.message && errors.name.message.toString()}</S.FormError>}
+                        <S.Field {...register('number',
+                            {
+                                required: 'обязательное поле',
+                                pattern: {
+                                    value: /^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/,
+                                    message: 'некорректный номер'
+                                }
+                            })} placeholder={'Телефон'}/>
+                        {errors?.number && <S.FormError>{errors.number.message && errors.number.message.toString()}</S.FormError>}
+                        <S.Field {...register('message',
+                            {required: 'обязательное поле'})} placeholder={'Сообщение'} as={'textarea'}/>
+                        {errors?.message && <S.FormError>{errors.message.message && errors.message.message.toString()}</S.FormError>}
                         <FlexWrapp align={'center'} wrap={'wrap'}>
-                            <Button>Отправить</Button>
+                            <Button type='submit'>Отправить</Button>
                             <S.FormNote>Отправляя форму, Вы соглашаетесь с <S.FormLink>политикой
                                 конфиденциальности</S.FormLink></S.FormNote>
                         </FlexWrapp>
