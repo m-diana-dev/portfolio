@@ -1,9 +1,9 @@
-import styled from "styled-components";
 import {WorkItem} from "../../works/workItems/WorkItem.tsx";
 import img1 from "../../../../assets/images/works/1.jpg"
 import {LabelType} from "../../../../layout/sections/works/Works.tsx";
 import {FC} from "react";
 import {AnimatePresence} from "framer-motion";
+import {S} from './WorkItems_Styles.ts'
 
 
 type WorkItemsPropsType = {
@@ -43,7 +43,7 @@ export const WorkItems: FC<WorkItemsPropsType> = ({currentFilterStatus}) => {
     }
 
     return (
-        <StyledWorkItems>
+        <S.WorkItems>
             <AnimatePresence>
                 {filteredWorks.map(el => <WorkItem layout={true}
                                                    initial={{ opacity: 0, rotate: 30 }}
@@ -51,15 +51,6 @@ export const WorkItems: FC<WorkItemsPropsType> = ({currentFilterStatus}) => {
                                                    transition={{ duration: 0.4 }}
                                                    key={el.id} img={el.img} imgWebp={el.imgWebp} title={el.title}/>)}
             </AnimatePresence>
-        </StyledWorkItems>
+        </S.WorkItems>
     );
 }
-
-const StyledWorkItems = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -20px;
-  @media ${({theme}) => theme.media.mobile} {
-    margin-left: -15px;
-  }
-`

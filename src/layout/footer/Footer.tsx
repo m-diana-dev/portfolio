@@ -1,54 +1,18 @@
-import styled from "styled-components";
 import {Container} from "../../components/Container.ts";
 import {FlexWrapp} from "../../components/FlexWrapp.ts";
-import {Social, SocialList} from "../../components/social/Social.tsx";
+import {Social} from "../../components/social/Social.tsx";
+import {S} from './Footer_Styles.ts'
 
 export const Footer = () => {
     return (
-        <StyledFooter>
+        <S.Footer>
             <Container>
                 <FlexWrapp justify={'space-between'}>
-                    <FooterText>© 2022 devDiana, Все права защищены</FooterText>
+                    <S.FooterText>© 2022 devDiana, Все права защищены</S.FooterText>
                     <Social items={['github', 'linkedin', 'codewars']}/>
-                    <FooterText href={'#'} as={'a'}>Политика конфиденциальности</FooterText>
+                    <S.FooterText href={'#'} as={'a'}>Политика конфиденциальности</S.FooterText>
                 </FlexWrapp>
             </Container>
-        </StyledFooter>
+        </S.Footer>
     );
 }
-
-const StyledFooter = styled.footer`
-  padding: 40px 0;
-  background-color: ${({theme})=>theme.colors.secondaryBg};
-  @media ${({theme}) => theme.media.mobile} {
-    padding: 35px 0 25px;
-  }
-  ${FlexWrapp}{
-    @media ${({theme}) => theme.media.mobile} {
-     flex-direction: column-reverse;
-    }
-  }
-  ${SocialList}{
-    @media ${({theme}) => theme.media.mobile} {
-      order: 1;
-      margin-bottom: 10px;
-    }
-  }
-  a{
-    transition: all .3s;
-    @media (any-hover: hover){
-      &:hover{
-        color: ${({theme})=>theme.colors.colorMain};
-      }
-    }
-  }
-`
-
-const FooterText = styled.small`
-  color: ${({theme})=>theme.colors.title};
-  font-size: 14px;
-  line-height: 100%;
-  @media ${({theme}) => theme.media.mobile} {
-    margin-bottom: 10px;
-  }
-`

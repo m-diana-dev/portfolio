@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {FlexWrapp} from "../../../components/FlexWrapp.ts";
 import {SectionSubtitle} from "../../../components/SectionSubtitle.ts";
@@ -8,16 +7,18 @@ import {Button} from "../../../components/button/Button.ts";
 import {Social} from "../../../components/social/Social.tsx";
 import {Decor} from "../../../components/Decor.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
+import {S} from './Contacts_Styles.ts'
+import {FC} from "react";
 
-export const Contacts = () => {
+export const Contacts: FC = () => {
     return (
-        <StyledContacts id='contacts'>
+        <S.Contacts id='contacts'>
             <Container>
                 <Decor>
                     <Icon id={'decor5.2'} width={'142'} height={'142'} viewBox={'0 0 140 140'}/>
                 </Decor>
                 <FlexWrapp justify={'space-between'} align={'flex-start'}>
-                    <ContactsContent>
+                    <S.ContactsContent>
                         <SectionSubtitle>Контакты</SectionSubtitle>
                         <SectionTitle>Готовы начать свой проект?</SectionTitle>
                         <SectionText>
@@ -25,151 +26,19 @@ export const Contacts = () => {
                             представлены ниже, либо заполните форму на сайте. Я отвечу Вам в ближайщее время!
                         </SectionText>
                         <Social items={['telegram', 'whatsapp', 'mail2']}/>
-                    </ContactsContent>
-                    <ContactsForm>
-                        <Field placeholder={'Имя'}/>
-                        <Field placeholder={'Телефон'}/>
-                        <Field placeholder={'Сообщение'} as={'textarea'}/>
+                    </S.ContactsContent>
+                    <S.ContactsForm>
+                        <S.Field placeholder={'Имя'}/>
+                        <S.Field placeholder={'Телефон'}/>
+                        <S.Field placeholder={'Сообщение'} as={'textarea'}/>
                         <FlexWrapp align={'center'} wrap={'wrap'}>
                             <Button>Отправить</Button>
-                            <FormNote>Отправляя форму, Вы соглашаетесь с <FormLink>политикой
-                                конфиденциальности</FormLink></FormNote>
+                            <S.FormNote>Отправляя форму, Вы соглашаетесь с <S.FormLink>политикой
+                                конфиденциальности</S.FormLink></S.FormNote>
                         </FlexWrapp>
-                    </ContactsForm>
+                    </S.ContactsForm>
                 </FlexWrapp>
             </Container>
-        </StyledContacts>
+        </S.Contacts>
     );
 }
-
-const StyledContacts = styled.section`
-  ${SectionTitle} {
-    margin-bottom: 15px;
-  }
-
-  ${SectionText} {
-    margin-bottom: 20px;
-    @media ${({theme}) => theme.media.mobile} {
-      margin-bottom: 10px;
-    }
-  }
-
-  ${Decor} {
-    z-index: 0;
-    overflow: visible;
-
-    svg:nth-child(1) {
-      transform: rotate(180deg);
-      bottom: -100px;
-      left: 25%;
-      @media screen and (max-width: 1200px) {
-        width: 120px;
-        height: 120px;
-      }
-      @media ${({theme}) => theme.media.tablet} {
-        width: 100px;
-        height: 100px;
-        bottom: -60px;
-      }
-      @media ${({theme}) => theme.media.mobile} {
-        width: 80px;
-        height: 80px;
-        bottom: -100px;
-        left: auto;
-        right: 70px;
-      }
-      @media ${({theme}) => theme.media.mobileSmall} {
-        right: 20px;
-      }
-    }
-  }
-
-  ${Container} {
-    > ${FlexWrapp} {
-      @media ${({theme}) => theme.media.mobile} {
-        flex-direction: column;
-      }
-    }
-  }
-`
-
-const ContactsContent = styled.div`
-  max-width: 525px;
-  width: 100%;
-  margin-right: 50px;
-  @media ${({theme}) => theme.media.mobile} {
-    margin-bottom: 25px;
-    margin-right: 0;
-    max-width: 100%;
-  }
-`
-const ContactsForm = styled.form`
-  max-width: 600px;
-  width: 100%;
-  @media ${({theme}) => theme.media.mobile} {
-    max-width: 100%;
-  }
-
-  textarea {
-    resize: none;
-    height: 140px;
-  }
-
-  ${Button} {
-    @media ${({theme}) => theme.media.mobileSmall} {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-`
-const Field = styled.input`
-  width: 100%;
-  padding: 12px 0px;
-  border-bottom: 1px solid ${({theme}) => theme.colors.title};
-  font-size: 18px;
-  color: ${({theme}) => theme.colors.title};
-  font-weight: 500;
-  line-height: 140%;
-
-  &:not(:last-child) {
-    margin-bottom: 15px;
-  }
-
-  & + ${FlexWrapp} {
-    margin-top: 15px;
-  }
-
-  &::placeholder {
-    color: rgba(${({theme}) => theme.colors.title}, 0.80);
-  }
-
-  &:focus-visible {
-    outline: 1px solid ${({theme}) => theme.colors.title};
-  }
-
-  @media ${({theme}) => theme.media.tablet} {
-    font-size: 16px;
-  }
-`
-const FormNote = styled.small`
-  color: rgba(${({theme}) => theme.colors.title}, 0.80);
-  font-size: 14px;
-  line-height: 100%;
-  max-width: calc(100% - 160px);
-  text-align: left;
-  margin-left: 20px;
-  @media ${({theme}) => theme.media.mobileSmall} {
-    max-width: 100%;
-    margin-left: 0;
-    font-size: 12px;
-  }
-`
-const FormLink = styled.a`
-  cursor: pointer;
-  transition: all .3s;
-  @media (any-hover: hover) {
-    &:hover {
-      color: ${({theme}) => theme.colors.colorMain};
-    }
-  }
-`

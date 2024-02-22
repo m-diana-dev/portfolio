@@ -1,43 +1,16 @@
 import {FC} from "react";
 import {Icon} from "../../components/icon/Icon.tsx";
-import styled from "styled-components";
+import S from './Social_Styles.ts'
 
 type SocialPropsType = {
-    items: Array<'telegram'|'whatsapp'|'mail'|'mail2'|'linkedin'|'github'|'codewars'>
+    items: Array<'telegram' | 'whatsapp' | 'mail' | 'mail2' | 'linkedin' | 'github' | 'codewars'>
 }
 export const Social: FC<SocialPropsType> = ({items}) => {
     return (
-        <SocialList>
-            {items.map(el => <SocialItem><SocialLink href='#'><Icon id={el} width={'25'} height={'25'} viewBox={'0 0 240 240'}/></SocialLink></SocialItem>)}
-        </SocialList>
+        <S.SocialList>
+            {items.map(el => <S.SocialItem>
+                <S.SocialLink href='#'><Icon id={el} width={'25'} height={'25'} viewBox={'0 0 240 240'}/></S.SocialLink>
+            </S.SocialItem>)}
+        </S.SocialList>
     );
 }
-
-export const SocialList = styled.ul`
-  display: flex;
-  align-items: center;
-`
-const SocialItem = styled.li`
-  &:not(:last-child){
-    margin-right: 3px;
-  }
-`
-const SocialLink = styled.a`
-  display: block;
-  color: ${({theme})=>theme.colors.colorMain};
-  height: 35px;
-  width: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all .3s;
-  @media (any-hover: hover){
-    &:hover{
-       background-color: ${({theme})=>theme.colors.colorSecondary};
-    }
-  }
-  svg{
-    transition: all .3s;
-  }
-`
