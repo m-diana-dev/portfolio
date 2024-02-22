@@ -88,7 +88,7 @@ const TabsItem = styled.li`
     }
   }
 `
-const TabsLink = styled.button<{ active: boolean }>`
+const TabsLink = styled.button<{ $active: boolean }>`
   padding-bottom: 4px;
   position: relative;
 
@@ -103,7 +103,7 @@ const TabsLink = styled.button<{ active: boolean }>`
     background-color: ${({theme}) => theme.colors.colorMain};
     transition: all .3s;
 
-    ${({active}) => active && css<{ active: boolean }>`
+    ${props => props.$active && css<{ $active: boolean }>`
       width: 100%;
     `}
   }

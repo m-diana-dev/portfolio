@@ -14,10 +14,10 @@ export const Tools: FC = () => {
     return (
         <S.Tools>
             <S.ToolsItems>
-                {toolsItems.map(el => <Icon id={el.id} height={'80'} width={'80'} viewBox={el.box}/>)}
+                {toolsItems.map((el, index) => <Icon key={index} id={el.id} height={'80'} width={'80'} viewBox={el.box}/>)}
             </S.ToolsItems>
             <S.ToolsItems>
-                {toolsItems.map(el => <Icon id={el.id} height={'80'} width={'80'} viewBox={el.box}/>)}
+                {toolsItems.map((el, index) => <Icon key={index} id={el.id} height={'80'} width={'80'} viewBox={el.box}/>)}
             </S.ToolsItems>
         </S.Tools>
     );

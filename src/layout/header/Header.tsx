@@ -31,13 +31,13 @@ export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
     return (
         <S.Header>
             <Container>
-                <FlexWrapp justify={'space-between'}>
+                <FlexWrapp $justify={'space-between'}>
                     <Logo/>
-                    <S.Menu isOpen={openMenu}>
+                    <S.Menu $isopen={openMenu}>
                         <S.MenuBurger onClick={onBurgerHandler}><span></span></S.MenuBurger>
                         <S.MenuBody>
                             <S.MenuList>
-                                {menuItems.map(el => <S.MenuItem>
+                                {menuItems.map((el, index) => <S.MenuItem key={index}>
                                     <S.MenuLink onClick={onLinkHandler}
                                               activeClass="_active"
                                               spy={true}

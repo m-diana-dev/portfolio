@@ -31,8 +31,8 @@ export const Works = () => {
                 <SectionSubtitle>Проекты</SectionSubtitle>
                 <SectionTitle>Некоторые мои работы</SectionTitle>
                 <S.Tabs>
-                    {TabsItems.map(el => <S.TabsItem>
-                        <S.TabsLink active={currentFilterStatus === el.label}
+                    {TabsItems.map((el, index) => <S.TabsItem key={index}>
+                        <S.TabsLink $active={currentFilterStatus === el.label}
                                   onClick={() => ChangeFilterStatus(el.label)}>{el.title}</S.TabsLink>
                     </S.TabsItem>)}
                 </S.Tabs>

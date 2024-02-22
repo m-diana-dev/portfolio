@@ -7,7 +7,7 @@ export const Footer = () => {
     return (
         <S.Footer>
             <Container>
-                <FlexWrapp justify={'space-between'}>
+                <FlexWrapp $justify={'space-between'}>
                     <S.FooterText>© 2022 devDiana, Все права защищены</S.FooterText>
                     <Social items={['github', 'linkedin', 'codewars']}/>
                     <S.FooterText href={'#'} as={'a'}>Политика конфиденциальности</S.FooterText>

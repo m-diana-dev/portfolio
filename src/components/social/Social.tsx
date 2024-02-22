@@ -8,7 +8,7 @@ type SocialPropsType = {
 export const Social: FC<SocialPropsType> = ({items}) => {
     return (
         <S.SocialList>
-            {items.map(el => <S.SocialItem>
+            {items.map((el, index) => <S.SocialItem key={index}>
                 <S.SocialLink href='#'><Icon id={el} width={'25'} height={'25'} viewBox={'0 0 240 240'}/></S.SocialLink>
             </S.SocialItem>)}
         </S.SocialList>

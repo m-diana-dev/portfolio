@@ -36,7 +36,7 @@ export const Contacts: FC = () => {
                 <Decor>
                     <Icon id={'decor5.2'} width={'142'} height={'142'} viewBox={'0 0 140 140'}/>
                 </Decor>
-                <FlexWrapp justify={'space-between'} align={'flex-start'}>
+                <FlexWrapp $justify={'space-between'} $align={'flex-start'}>
                     <S.ContactsContent>
                         <SectionSubtitle>Контакты</SectionSubtitle>
                         <SectionTitle>Готовы начать свой проект?</SectionTitle>
@@ -65,7 +65,7 @@ export const Contacts: FC = () => {
                         <S.Field {...register('message',
                             {required: 'обязательное поле'})} placeholder={'Сообщение'} as={'textarea'}/>
                         {errors?.message && <S.FormError>{errors.message.message && errors.message.message.toString()}</S.FormError>}
-                        <FlexWrapp align={'center'} wrap={'wrap'}>
+                        <FlexWrapp $align={'center'} $wrap={'wrap'}>
                             <Button type='submit'>Отправить</Button>
                             <S.FormNote>Отправляя форму, Вы соглашаетесь с <S.FormLink>политикой
                                 конфиденциальности</S.FormLink></S.FormNote>

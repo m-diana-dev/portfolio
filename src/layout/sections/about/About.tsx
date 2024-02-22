@@ -15,7 +15,7 @@ export const About: FC = () => {
     return (
         <S.About id='about'>
             <Container>
-                <FlexWrapp justify={'space-between'} align={'center'}>
+                <FlexWrapp $justify={'space-between'} $align={'center'}>
                     <S.AboutContent>
                         <SectionSubtitle>Обо мне</SectionSubtitle>
                         <SectionTitle>Front-End Developer, сочетающий искусство и технологии</SectionTitle>

@@ -38,8 +38,8 @@ const Header = styled.header`
   }
 }
 `
-const Menu = styled.div<{ isOpen: boolean }>`
-  ${props => props.isOpen && css<{ isOpen: boolean }>`
+const Menu = styled.div<{ $isopen: boolean }>`
+  ${props => props.$isopen && css<{ $isopen: boolean }>`
     ${MenuBody} {
       top: 54px;
       @media screen and (max-width: 370px) {

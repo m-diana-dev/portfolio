@@ -53,10 +53,11 @@ export const Services: FC = () => {
                 <SectionSubtitle>услуги</SectionSubtitle>
                 <SectionTitle>Мой опыт</SectionTitle>
                 <S.ServicesItems>
-                    {ServicesItems.map(el => <ServicesItem iconId={el.iconId}
-                                                           iconBox={el.iconBox}
-                                                           title={el.title}
-                                                           text={el.text}/>)}
+                    {ServicesItems.map((el, index) => <ServicesItem key={index}
+                                                                    iconId={el.iconId}
+                                                                    iconBox={el.iconBox}
+                                                                    title={el.title}
+                                                                    text={el.text}/>)}
                 </S.ServicesItems>
                 <Button as={Link} to="contacts" spy={true} smooth={true} offset={-50}>Связаться!</Button>
             </Container>
