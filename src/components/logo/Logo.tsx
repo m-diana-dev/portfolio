@@ -14,6 +14,7 @@ const StyledLogo = styled.a`
   font-size: 1.1rem;
   font-weight: 700;
   color: ${({theme})=>theme.colors.colorMain};
+  cursor: pointer;
   transition: all .3s;
   @media (any-hover: hover){
     &:hover{

@@ -5,10 +5,13 @@ type ReviewsItemPropsType = {
     name?: string
     text?: string
     title?: string
+    link?: string
 }
-export const ReviewsItem: FC<ReviewsItemPropsType> = ({name, text, title}) => {
+export const ReviewsItem: FC<ReviewsItemPropsType> = ({name, text, title, link}) => {
+    const ReviewsBlockAs = link ? 'a' : 'article'
+
     return (
-        <StyledReviewsItem>
+        <StyledReviewsItem as={ReviewsBlockAs} href={link}>
             {title && <ReviewsItemTitle>{title}</ReviewsItemTitle>}
             <ReviewsItemName>{name}</ReviewsItemName>
             <ReviewsItemText>{text}</ReviewsItemText>
@@ -22,7 +25,7 @@ export const ReviewsItemName = styled.div`
   font-size: 1.1rem;
   font-weight: 500;
   line-height: 100%;
-  margin: 0 0 15px 0!important;
+  margin: 0 0 15px 0 !important;
   @media ${({theme}) => theme.media.mobile} {
     font-size: 1rem;
   }
@@ -38,7 +41,7 @@ export const ReviewsItemTitle = styled.div`
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 120%;
-  margin: 0!important;
+  margin: 0 !important;
   @media ${({theme}) => theme.media.mobile} {
     font-size: 1rem;
   }
@@ -49,7 +52,7 @@ export const ReviewsItemText = styled.div`
   font-style: italic;
   line-height: 140%;
   letter-spacing: 0.21px;
-  margin: 0!important;
+  margin: 0 !important;
   @media ${({theme}) => theme.media.mobile} {
     font-size: 0.9rem;
   }

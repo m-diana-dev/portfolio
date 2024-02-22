@@ -207,6 +207,7 @@ const MenuItem = styled.li`
 const MenuLink = styled(Link)`
   padding-bottom: 4px;
   position: relative;
+  cursor: pointer;
 
   &::before {
     content: '';

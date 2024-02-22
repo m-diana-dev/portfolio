@@ -11,6 +11,7 @@ export const Button = styled.button`
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 140%; 
+  cursor: pointer;
   transition: all .3s;
 
   @media ${({theme}) => theme.media.mobile} {

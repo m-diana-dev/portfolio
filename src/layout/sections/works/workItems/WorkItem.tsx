@@ -16,7 +16,7 @@ export const WorkItem: FC<WorkItemPropsType> = ({img, imgWebp, title, ...restPro
                     <source srcSet={imgWebp} type="image/webp"/>
                     <img src={img} alt="work"/>
                 </picture>
-                <Button>Посмотреть</Button>
+                <Button as='a'>Посмотреть</Button>
             </WorkItemImg>
             <WorkItemTitle href='#'>{title}</WorkItemTitle>
         </StyledWorkItem>
