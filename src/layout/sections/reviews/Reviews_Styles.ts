@@ -44,6 +44,10 @@ const Reviews = styled.section`
   .alice-carousel {
     width: calc(100% + 20px);
     margin: 0 -10px;
+    @media screen and (max-width: 1320px){
+      width: calc(100% + 40px);
+      transform: translateX(-10px);
+    }
   }
 
   .alice-carousel__stage {
@@ -122,7 +126,7 @@ const Reviews = styled.section`
   }
 
   .alice-carousel__next-btn {
-    right: 0;
+    right: 10px;
 
     svg {
       transform: translate(2px, 1px);
@@ -130,7 +134,7 @@ const Reviews = styled.section`
   }
 
   .alice-carousel__prev-btn {
-    right: 50px;
+    right: 60px;
     @media ${({theme}) => theme.media.mobile} {
       margin-left: 10px;
       margin-right: 10px;
