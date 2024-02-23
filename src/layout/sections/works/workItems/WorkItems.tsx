@@ -1,5 +1,24 @@
 import {WorkItem} from "../../works/workItems/WorkItem.tsx";
 import img1 from "../../../../assets/images/works/1.jpg"
+import img2 from "../../../../assets/images/works/2.jpg"
+import img3 from "../../../../assets/images/works/3.jpg"
+import img4 from "../../../../assets/images/works/4.jpg"
+import img5 from "../../../../assets/images/works/5.jpg"
+import img6 from "../../../../assets/images/works/6.jpg"
+import img7 from "../../../../assets/images/works/7.jpg"
+import img8 from "../../../../assets/images/works/8.jpg"
+import img9 from "../../../../assets/images/works/9.jpg"
+import img10 from "../../../../assets/images/works/10.jpg"
+import imgWebp1 from "../../../../assets/images/works/1.webp"
+import imgWebp2 from "../../../../assets/images/works/2.webp"
+import imgWebp3 from "../../../../assets/images/works/3.webp"
+import imgWebp4 from "../../../../assets/images/works/4.webp"
+import imgWebp5 from "../../../../assets/images/works/5.webp"
+import imgWebp6 from "../../../../assets/images/works/6.webp"
+import imgWebp7 from "../../../../assets/images/works/7.webp"
+import imgWebp8 from "../../../../assets/images/works/8.webp"
+import imgWebp9 from "../../../../assets/images/works/9.webp"
+import imgWebp10 from "../../../../assets/images/works/10.webp"
 import {LabelType} from "../../../../layout/sections/works/Works.tsx";
 import {FC} from "react";
 import {AnimatePresence} from "framer-motion";
@@ -19,13 +38,16 @@ type WorkItemsDataType = {
 
 export const WorkItems: FC<WorkItemsPropsType> = ({currentFilterStatus}) => {
     const workItemsData: WorkItemsDataType[] = [
-        {id: 1, img: img1, imgWebp: '', title: 'landing', type: 'landing'},
-        {id: 2, img: img1, imgWebp: '', title: 'corporate', type: 'corporate'},
-        {id: 3, img: img1, imgWebp: '', title: 'wordpress', type: 'wordpress'},
-        {id: 4, img: img1, imgWebp: '', title: 'app', type: 'app'},
-        {id: 5, img: img1, imgWebp: '', title: 'store', type: 'store'},
-        {id: 6, img: img1, imgWebp: '', title: 'store', type: 'store'},
-        {id: 7, img: img1, imgWebp: '', title: 'store', type: 'store'},
+        {id: 1, img: img4, imgWebp: imgWebp4, title: 'RealGame', type: 'landing'},
+        {id: 2, img: img7, imgWebp: imgWebp7, title: 'DreamKidsClub', type: 'corporate'},
+        {id: 3, img: img8, imgWebp: imgWebp8, title: 'Нянюшка', type: 'corporate'},
+        {id: 4, img: img9, imgWebp: imgWebp9, title: 'Alummax', type: 'corporate'},
+        {id: 5, img: img1, imgWebp: imgWebp1, title: 'GreenHouse', type: 'wordpress'},
+        {id: 6, img: img2, imgWebp: imgWebp2, title: 'Integra', type: 'store'},
+        {id: 7, img: img3, imgWebp: imgWebp3, title: 'Gerkules', type: 'store'},
+        {id: 8, img: img5, imgWebp: imgWebp5, title: 'Creative Group', type: 'landing'},
+        {id: 9, img: img6, imgWebp: imgWebp6, title: 'Выкуп авто', type: 'landing'},
+        {id: 10, img: img10, imgWebp: imgWebp10, title: 'Liko', type: 'wordpress'},
     ]
 
     let filteredWorks = workItemsData.filter(el => el.type === 'landing')

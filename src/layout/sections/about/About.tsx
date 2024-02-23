@@ -39,7 +39,7 @@ export const About: FC = () => {
                             <Icon id={'decor5.1'} width={'142'} height={'143'} viewBox={'0 0 140 140'}/>
                         </Decor>
                         <picture>
-                            <source srcSet={imgWebp} type="image/webp"/>
+                            {/*<source srcSet={imgWebp} type="image/webp"/>*/}
                             <img src={imgPng} alt="developer"/>
                         </picture>
                     </S.AboutImg>
