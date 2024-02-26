@@ -6,6 +6,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {ErrorPage} from "./layout/errorPage/errorPage.tsx";
 import {MainPage} from "./layout/mainPage/MainPage.tsx";
 import {S} from './App_Styles.ts'
+import {Policy} from "./layout/policy/Policy.tsx";
 
 function App() {
     const [openMenu, setOpenMenu] = useState(false)
@@ -20,7 +21,7 @@ function App() {
                         <Header isMenuOpenCallback={isMenuOpenCallback} openMenu={openMenu}/>
                         <Routes>
                             <Route path={'/'} element={<MainPage/>}/>
-                            {/*<Route path={'/'} element={<Policy/>}/>*/}
+                            <Route path={'/policy'} element={<Policy/>}/>
                             <Route path={'/*'} element={<ErrorPage/>}/>
                         </Routes>
                         <Footer/>

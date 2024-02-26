@@ -2,6 +2,7 @@ import {Container} from "../../components/Container.ts";
 import {FlexWrapp} from "../../components/FlexWrapp.ts";
 import {Social} from "../../components/social/Social.tsx";
 import {S} from './Footer_Styles.ts'
+import {NavLink} from "react-router-dom";
 
 export const Footer = () => {
     return (
@@ -14,7 +15,7 @@ export const Footer = () => {
                         {id: 'codewars', link: 'https://www.codewars.com/users/diana_dev'},
                         {id: 'linkedin', link: '#'}
                     ]}/>
-                    <S.FooterText href={'#'} as={'a'}>Политика конфиденциальности</S.FooterText>
+                    <S.FooterText><NavLink to={'/policy'}>Политика конфиденциальности</NavLink></S.FooterText>
                 </FlexWrapp>
             </Container>
         </S.Footer>
