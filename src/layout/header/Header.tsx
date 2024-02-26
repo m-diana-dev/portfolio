@@ -23,7 +23,7 @@ export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
     }
 
     const onLinkHandler = () => {
-        if(openMenu){
+        if (openMenu) {
             isMenuOpenCallback(!openMenu)
         }
     }
@@ -39,16 +39,20 @@ export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
                             <S.MenuList>
                                 {menuItems.map((el, index) => <S.MenuItem key={index}>
                                     <S.MenuLink onClick={onLinkHandler}
-                                              activeClass="_active"
-                                              spy={true}
-                                              smooth={true}
-                                              offset={-50}
-                                              to={el.href}>{el.title}</S.MenuLink>
+                                                activeClass="_active"
+                                                spy={true}
+                                                smooth={true}
+                                                offset={-50}
+                                                to={el.href}>{el.title}</S.MenuLink>
                                 </S.MenuItem>)}
                             </S.MenuList>
                         </S.MenuBody>
                     </S.Menu>
-                    <Social items={['telegram', 'whatsapp', 'mail2']}/>
+                    <Social items={[
+                        {id: 'telegram', link: 'tg://resolve?domain=dev_diana'},
+                        {id: 'whatsapp', link: 'https://wa.me/79283637910'},
+                        {id: 'mail2', link: 'mailto:m.diana.dev@gmail.com'},
+                    ]}/>
                 </FlexWrapp>
             </Container>
         </S.Header>

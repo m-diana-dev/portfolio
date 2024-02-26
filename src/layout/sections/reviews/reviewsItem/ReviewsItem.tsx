@@ -11,10 +11,10 @@ export const ReviewsItem: FC<ReviewsItemPropsType> = ({name, text, title, link})
     const ReviewsBlockAs = link ? 'a' : 'article'
 
     return (
-        <S.ReviewsItem as={ReviewsBlockAs} href={link}>
+        <S.ReviewsItem as={ReviewsBlockAs} href={link} target='_blank'>
             {title && <S.ReviewsItemTitle>{title}</S.ReviewsItemTitle>}
-            <S.ReviewsItemName>{name}</S.ReviewsItemName>
-            <S.ReviewsItemText>{text}</S.ReviewsItemText>
+            {name && <S.ReviewsItemName>{name}</S.ReviewsItemName>}
+            {text && <S.ReviewsItemText>«{text}»</S.ReviewsItemText>}
         </S.ReviewsItem>
     );
 }

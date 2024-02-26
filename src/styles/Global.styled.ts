@@ -29,23 +29,11 @@ export const GlobalStyle = createGlobalStyle`
     min-width: 320px;
     font-size: 20px;
   }
-  
-  html{
-    ::-webkit-scrollbar {
-      width: 7px;
-      background-color: rgba(20, 20, 20, 0.16);
-      border-radius: 3px;
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: ${({theme})=>theme.colors.colorMain};
-      border-radius: 3px;
-    }
-  }
 
   body {
     overflow: ${(props) => (props.theme.isMenuOpen ? 'hidden' : 'auto')};
     position: relative;
-    color: ${({theme})=>theme.colors.text};
+    color: ${({theme}) => theme.colors.text};
     line-height: 1;
     font-family: 'Roboto', Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     text-rendering: optimizeLegibility;
@@ -54,7 +42,8 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    &::before{
+
+    &::before {
       content: '';
       position: fixed;
       top: 100px;
@@ -70,10 +59,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background: ${({theme})=>theme.colors.colorSecondary};
+    background: ${({theme}) => theme.colors.colorSecondary};
   }
+
   ::-moz-selection {
-    background: ${({theme})=>theme.colors.colorSecondary};
+    background: ${({theme}) => theme.colors.colorSecondary};
   }
 
   input,

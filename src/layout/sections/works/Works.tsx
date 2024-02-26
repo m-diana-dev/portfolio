@@ -7,17 +7,18 @@ import {Icon} from "../../../components/icon/Icon.tsx";
 import {useState} from "react";
 import {S} from './Works_Styles.ts'
 
-export type LabelType = 'landing' | 'store' | 'corporate' | 'wordpress' | 'app'
+export type LabelType = 'landing' | 'store' | 'corporate' | 'wordpress' | 'app' | 'all'
 export const Works = () => {
     const TabsItems: { title: string, label: LabelType }[] = [
-        {title: 'Landing Pages', label: 'landing'},
+        {title: 'All', label: 'all'},
         {title: 'Интернет-магазины', label: 'store'},
+        {title: 'Landing Pages', label: 'landing'},
         {title: 'Корпоративные сайты', label: 'corporate'},
         {title: 'WordPress', label: 'wordpress'},
-        {title: 'Web-приложения', label: 'app'},
+        // {title: 'Web-приложения', label: 'app'},
     ]
 
-    const [currentFilterStatus, setCurrentFilterStatus] = useState<LabelType>('landing')
+    const [currentFilterStatus, setCurrentFilterStatus] = useState<LabelType>('all')
 
     const ChangeFilterStatus = (label: LabelType) => setCurrentFilterStatus(label)
 

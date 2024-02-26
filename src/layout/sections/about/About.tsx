@@ -3,13 +3,13 @@ import {FlexWrapp} from "../../../components/FlexWrapp.ts";
 import {SectionSubtitle} from "../../../components/SectionSubtitle.ts";
 import {SectionTitle} from "../../../components/SectionTitle.ts";
 import imgPng from "../../../assets/images/about/main.png";
-import imgWebp from "../../../assets/images/about/main.webp";
 import {AboutItem} from "../../../layout/sections/about/aboutItem/AboutItem.tsx";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {Decor} from "../../../components/Decor.ts";
 import {SectionText} from "../../../components/SectionText.ts";
 import {S} from './About_Styles.ts'
 import {FC} from "react";
+import Typewriter from 'typewriter-effect';
 
 export const About: FC = () => {
     return (
@@ -18,7 +18,17 @@ export const About: FC = () => {
                 <FlexWrapp $justify={'space-between'} $align={'center'}>
                     <S.AboutContent>
                         <SectionSubtitle>Обо мне</SectionSubtitle>
-                        <SectionTitle>Front-End Developer, сочетающий искусство и технологии</SectionTitle>
+                        <SectionTitle>
+                            <span>Frontend Developer, Верстальщик, Web-разработчик</span>
+                            <Typewriter
+                                options={{
+                                    strings: ['Frontend Developer', 'Верстальщик', 'Web-разработчик'],
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 70
+                                }}
+                            />
+                        </SectionTitle>
                         <SectionText>
                             Привет, я Диана, фронтенд-разработчик и верстальщик! Специализируюсь на создании визуально
                             привлекательных и удобных для пользователя веб-сайтов. Постоянно обучаюсь и слежу за

@@ -6,9 +6,10 @@ import {S} from './WorkItem_Styles.ts'
 export type WorkItemPropsType = {
     img?: string
     imgWebp?: string
-    title?: string,
+    title?: string
+    link?: string
 } & HTMLMotionProps<"div">
-export const WorkItem: FC<WorkItemPropsType> = ({img, imgWebp, title, ...restProps}) => {
+export const WorkItem: FC<WorkItemPropsType> = ({img, imgWebp, title, link, ...restProps}) => {
     return (
         <S.WorkItem {...restProps}>
             <S.WorkItemImg>
@@ -16,9 +17,9 @@ export const WorkItem: FC<WorkItemPropsType> = ({img, imgWebp, title, ...restPro
                     <source srcSet={imgWebp} type="image/webp"/>
                     <img src={img} alt="work"/>
                 </picture>
-                <Button as='a'>Посмотреть</Button>
+                <Button as='a' href={`http://diana-dev.ru/${link}`} target='_blank'>Посмотреть</Button>
             </S.WorkItemImg>
-            <S.WorkItemTitle href='#'>{title}</S.WorkItemTitle>
+            <S.WorkItemTitle href={`http://diana-dev.ru/${link}`} target='_blank'>{title}</S.WorkItemTitle>
         </S.WorkItem>
     );
 }
