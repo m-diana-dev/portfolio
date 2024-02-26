@@ -4,12 +4,16 @@ import {Social} from "../../components/social/Social.tsx";
 import {FlexWrapp} from "../../components/FlexWrapp.ts";
 import {FC} from "react";
 import {S} from './Header_Styles.ts'
+import {NavLink, useLocation} from "react-router-dom";
 
 type HeaderPropsType = {
     isMenuOpenCallback: (isMenuOpen: boolean) => void
     openMenu: boolean
 }
 export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
+    const path = useLocation().pathname;
+    const innerPage = path.split('/')[1];
+
     const menuItems = [
         {title: 'Обо мне', href: 'about'},
         {title: 'Услуги', href: 'services'},
@@ -32,11 +36,12 @@ export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
         <S.Header>
             <Container>
                 <FlexWrapp $justify={'space-between'}>
-                    <Logo/>
+                    {innerPage ? <NavLink to={'/'}><Logo/></NavLink> : <Logo/>}
                     <S.Menu $isopen={openMenu}>
                         <S.MenuBurger onClick={onBurgerHandler}><span></span></S.MenuBurger>
                         <S.MenuBody>
-                            <S.MenuList>
+                            {innerPage ? <S.HeaderLink onClick={onLinkHandler} to={'/'}>На главную</S.HeaderLink> :
+                                <S.MenuList>
                                 {menuItems.map((el, index) => <S.MenuItem key={index}>
                                     <S.MenuLink onClick={onLinkHandler}
                                                 activeClass="_active"
@@ -46,6 +51,7 @@ export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
                                                 to={el.href}>{el.title}</S.MenuLink>
                                 </S.MenuItem>)}
                             </S.MenuList>
+                                }
                         </S.MenuBody>
                     </S.Menu>
                     <Social items={[

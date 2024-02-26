@@ -3,6 +3,7 @@ import {FlexWrapp} from "../../components/FlexWrapp.ts";
 import Styles from '../../components/social/Social_Styles.ts'
 
 const Footer = styled.footer`
+  flex: 0 0 auto;
   padding: 40px 0;
   background-color: ${({theme})=>theme.colors.secondaryBg};
   @media ${({theme}) => theme.media.mobile} {

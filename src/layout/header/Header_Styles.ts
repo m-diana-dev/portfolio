@@ -1,6 +1,7 @@
 import styled, {css} from "styled-components";
 import {Link} from "react-scroll";
 import Styles from '../../components/social/Social_Styles.ts'
+import {NavLink} from "react-router-dom";
 
 const Header = styled.header`
   padding: 15px 0;
@@ -183,6 +184,40 @@ const MenuLink = styled(Link)`
     }
   }
 `
+const HeaderLink = styled(NavLink)`
+  padding-bottom: 4px;
+  position: relative;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: ${({theme}) => theme.colors.title};
+  line-height: 140%;
+  @media ${({theme}) => theme.media.tablet} {
+    font-size: 0.8rem;
+  }
+  @media ${({theme}) => theme.media.mobile} {
+    font-size: 1.1rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    border-radius: 2px;
+    background-color: ${({theme}) => theme.colors.colorMain};
+    transition: all .3s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+`
 
 export const S = {
     Header,
@@ -192,4 +227,5 @@ export const S = {
     MenuList,
     MenuItem,
     MenuLink,
+    HeaderLink,
 }
