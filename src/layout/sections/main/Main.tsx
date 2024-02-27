@@ -4,9 +4,9 @@ import {Icon} from "../../../components/icon/Icon.tsx";
 import {Decor} from "../../../components/Decor.ts";
 import {Link} from "react-scroll";
 import {S} from './Main_Styles.ts'
-import {FC} from "react";
+import {FC, memo} from "react";
 
-export const Main: FC = () => {
+export const Main: FC = memo(() => {
     return (
         <S.Main>
             <Decor>
@@ -22,4 +22,4 @@ export const Main: FC = () => {
             </Container>
         </S.Main>
     );
-}
+})

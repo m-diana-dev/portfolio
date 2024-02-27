@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, memo} from "react";
 import {Icon} from "../../../../components/icon/Icon.tsx";
 import {S} from './ServicesItem_Styles.ts'
 
@@ -8,7 +8,7 @@ type ServicesItemPropsType = {
     title: string
     text: string
 }
-export const ServicesItem: FC<ServicesItemPropsType> = ({iconId, iconBox, title, text}) => {
+export const ServicesItem: FC<ServicesItemPropsType> = memo(({iconId, iconBox, title, text}) => {
     return (
         <S.ServicesItem>
             <Icon id={iconId} width={'54'} height={'54'} viewBox={iconBox}/>
@@ -18,4 +18,4 @@ export const ServicesItem: FC<ServicesItemPropsType> = ({iconId, iconBox, title,
             </S.ServicesItemText>
         </S.ServicesItem>
     );
-}
+})

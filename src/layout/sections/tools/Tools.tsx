@@ -1,8 +1,8 @@
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {S} from './Tools_Styled.ts'
-import {FC} from "react";
+import {FC, memo} from "react";
 
-export const Tools: FC = () => {
+export const Tools: FC = memo(() => {
     const toolsItems = [
         {id: 'html', box: '0 0 20 20'},
         {id: 'javascript', box: '0 0 24 24'},
@@ -21,4 +21,4 @@ export const Tools: FC = () => {
             </S.ToolsItems>
         </S.Tools>
     );
-}
+})

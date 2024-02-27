@@ -2,7 +2,7 @@ import {Container} from "../../components/Container.js";
 import {Logo} from "../../components/logo/Logo.tsx";
 import {Social} from "../../components/social/Social.tsx";
 import {FlexWrapp} from "../../components/FlexWrapp.ts";
-import {FC} from "react";
+import {FC, memo} from "react";
 import {S} from './Header_Styles.ts'
 import {NavLink, useLocation} from "react-router-dom";
 
@@ -10,7 +10,7 @@ type HeaderPropsType = {
     isMenuOpenCallback: (isMenuOpen: boolean) => void
     openMenu: boolean
 }
-export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
+export const Header: FC<HeaderPropsType> = memo(({isMenuOpenCallback, openMenu}) => {
     const path = useLocation().pathname;
     const innerPage = path.split('/')[1];
 
@@ -63,4 +63,4 @@ export const Header: FC<HeaderPropsType> = ({isMenuOpenCallback, openMenu}) => {
             </Container>
         </S.Header>
     );
-};
+})

@@ -22,7 +22,7 @@ import imgWebp9 from "../../../../assets/images/works/9.webp"
 import imgWebp10 from "../../../../assets/images/works/10.webp"
 import imgWebp11 from "../../../../assets/images/works/11.webp"
 import {LabelType} from "../../../../layout/sections/works/Works.tsx";
-import {FC} from "react";
+import {FC, memo} from "react";
 import {AnimatePresence} from "framer-motion";
 import {S} from './WorkItems_Styles.ts'
 
@@ -39,7 +39,7 @@ type WorkItemsDataType = {
     link: string
 }
 
-export const WorkItems: FC<WorkItemsPropsType> = ({currentFilterStatus}) => {
+export const WorkItems: FC<WorkItemsPropsType> = memo(({currentFilterStatus}) => {
     const workItemsData: WorkItemsDataType[] = [
         {id: 1, img: img4, imgWebp: imgWebp4, title: 'RealGame', type: 'landing', link: 'cockpits'},
         {id: 2, img: img2, imgWebp: imgWebp2, title: 'Integra', type: 'store', link: 'integra'},
@@ -81,4 +81,4 @@ export const WorkItems: FC<WorkItemsPropsType> = ({currentFilterStatus}) => {
             </AnimatePresence>
         </S.WorkItems>
     );
-}
+})

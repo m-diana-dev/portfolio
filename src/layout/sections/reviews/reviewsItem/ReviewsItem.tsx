@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, memo} from "react";
 import S from './ReviewsItem_Styles.ts'
 
 type ReviewsItemPropsType = {
@@ -7,7 +7,7 @@ type ReviewsItemPropsType = {
     title?: string
     link?: string
 }
-export const ReviewsItem: FC<ReviewsItemPropsType> = ({name, text, title, link}) => {
+export const ReviewsItem: FC<ReviewsItemPropsType> = memo(({name, text, title, link}) => {
     const ReviewsBlockAs = link ? 'a' : 'article'
 
     return (
@@ -17,4 +17,4 @@ export const ReviewsItem: FC<ReviewsItemPropsType> = ({name, text, title, link})
             {text && <S.ReviewsItemText>«{text}»</S.ReviewsItemText>}
         </S.ReviewsItem>
     );
-}
+})

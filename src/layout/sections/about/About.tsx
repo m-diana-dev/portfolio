@@ -8,10 +8,10 @@ import {Icon} from "../../../components/icon/Icon.tsx";
 import {Decor} from "../../../components/Decor.ts";
 import {SectionText} from "../../../components/SectionText.ts";
 import {S} from './About_Styles.ts'
-import {FC} from "react";
+import {FC, memo} from "react";
 import Typewriter from 'typewriter-effect';
 
-export const About: FC = () => {
+export const About: FC = memo(() => {
     return (
         <S.About id='about'>
             <Container>
@@ -57,4 +57,4 @@ export const About: FC = () => {
             </Container>
         </S.About>
     );
-}
+})

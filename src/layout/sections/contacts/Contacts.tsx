@@ -8,12 +8,12 @@ import {Social} from "../../../components/social/Social.tsx";
 import {Decor} from "../../../components/Decor.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {S} from './Contacts_Styles.ts'
-import {FC} from "react";
+import {FC, memo} from "react";
 import emailjs from '@emailjs/browser';
 import {FieldValues, useForm} from "react-hook-form";
 import {NavLink} from "react-router-dom";
 
-export const Contacts: FC = () => {
+export const Contacts: FC = memo(() => {
     const {
         register,
         reset,
@@ -83,4 +83,4 @@ export const Contacts: FC = () => {
             </Container>
         </S.Contacts>
     );
-}
+})

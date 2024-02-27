@@ -1,4 +1,4 @@
-import {FC} from "react";
+import {FC, memo} from "react";
 import {Button} from "../../../../components/button/Button.ts";
 import {HTMLMotionProps} from "framer-motion";
 import {S} from './WorkItem_Styles.ts'
@@ -9,7 +9,7 @@ export type WorkItemPropsType = {
     title?: string
     link?: string
 } & HTMLMotionProps<"div">
-export const WorkItem: FC<WorkItemPropsType> = ({img, imgWebp, title, link, ...restProps}) => {
+export const WorkItem: FC<WorkItemPropsType> = memo(({img, imgWebp, title, link, ...restProps}) => {
     return (
         <S.WorkItem {...restProps}>
             <S.WorkItemImg>
@@ -22,4 +22,4 @@ export const WorkItem: FC<WorkItemPropsType> = ({img, imgWebp, title, link, ...r
             <S.WorkItemTitle href={`http://diana-dev.ru/${link}`} target='_blank'>{title}</S.WorkItemTitle>
         </S.WorkItem>
     );
-}
+})

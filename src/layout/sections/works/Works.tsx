@@ -4,11 +4,11 @@ import {SectionTitle} from "../../../components/SectionTitle.ts";
 import {WorkItems} from "../works/workItems/WorkItems.tsx";
 import {Decor} from "../../../components/Decor.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
-import {useState} from "react";
+import {memo, useState} from "react";
 import {S} from './Works_Styles.ts'
 
 export type LabelType = 'landing' | 'store' | 'corporate' | 'wordpress' | 'app' | 'all'
-export const Works = () => {
+export const Works = memo(() => {
     const TabsItems: { title: string, label: LabelType }[] = [
         {title: 'All', label: 'all'},
         {title: 'Интернет-магазины', label: 'store'},
@@ -41,4 +41,4 @@ export const Works = () => {
             </Container>
         </S.Works>
     );
-}
+})

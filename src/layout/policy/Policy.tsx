@@ -1,10 +1,10 @@
-import {FC} from "react";
+import {FC, memo} from "react";
 import {Container} from "../../components/Container.ts";
 import {S} from './Policy_Styles.ts'
 import {Icon} from "../../components/icon/Icon.tsx";
 import {Decor} from "../../components/Decor.ts";
 
-export const Policy: FC = () => {
+export const Policy: FC = memo(() => {
     return (
         <S.Policy>
             <Decor>
@@ -136,4 +136,4 @@ export const Policy: FC = () => {
             </Container>
         </S.Policy>
     );
-}
+})

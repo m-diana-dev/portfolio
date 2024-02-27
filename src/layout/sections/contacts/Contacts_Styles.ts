@@ -134,7 +134,7 @@ const FormNote = styled.small`
     font-size: 12px;
   }
 `
-const FormLink = styled.a`
+const FormLink = styled.span`
   cursor: pointer;
   transition: all .3s;
   @media (any-hover: hover) {

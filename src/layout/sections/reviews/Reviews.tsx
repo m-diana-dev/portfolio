@@ -6,10 +6,10 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {Decor} from "../../../components/Decor.ts";
-import {FC} from "react";
+import {FC, memo} from "react";
 import {S} from './Reviews_Styles.ts'
 
-export const Reviews: FC = () => {
+export const Reviews: FC = memo(() => {
     const sliderItems = [
         <ReviewsItem name={'Надежда'}
                      text={'Задача выполнена оперативно, коммуникация очень приятная, а результат отличный! Спасибо, Диана! Смело рекомендую исполнителя, даже не сомневайтесь!'}/>,
@@ -60,4 +60,4 @@ export const Reviews: FC = () => {
             </Container>
         </S.Reviews>
     );
-}
+})

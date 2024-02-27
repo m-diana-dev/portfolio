@@ -1,4 +1,4 @@
-import {FC, ReactElement} from "react";
+import {FC, memo, ReactElement} from "react";
 import {SectionTitle} from "../../../../components/SectionTitle.ts";
 import {S} from './AboutItem_Styles.ts'
 
@@ -8,7 +8,7 @@ type AboutItemsPropsType = {
     title?: string
     img?: ReactElement
 }
-export const AboutItem: FC<AboutItemsPropsType> = ({value, title, img}) => {
+export const AboutItem: FC<AboutItemsPropsType> = memo(({value, title, img}) => {
     return (
         <S.AboutItem>
             <SectionTitle as="div">
@@ -19,4 +19,4 @@ export const AboutItem: FC<AboutItemsPropsType> = ({value, title, img}) => {
             </S.AboutItemTitle>
         </S.AboutItem>
     );
-}
+})

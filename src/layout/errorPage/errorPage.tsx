@@ -3,8 +3,9 @@ import {S} from './ErrorPage_Styles.ts'
 import {FlexWrapp} from "../../components/FlexWrapp.ts";
 import {Icon} from "../../components/icon/Icon.tsx";
 import {Decor} from "../../components/Decor.ts";
+import {memo} from "react";
 
-export const ErrorPage = () => {
+export const ErrorPage = memo(() => {
     return (
         <S.ErrorPage>
             <Decor>
@@ -20,5 +21,5 @@ export const ErrorPage = () => {
             </Container>
         </S.ErrorPage>
     );
-};
+})
 

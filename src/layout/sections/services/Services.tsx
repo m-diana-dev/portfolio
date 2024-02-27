@@ -6,7 +6,7 @@ import {ServicesItem} from "../../../layout/sections/services/servicesItem/Servi
 import {Decor} from "../../../components/Decor.ts";
 import {Icon} from "../../../components/icon/Icon.tsx";
 import {Link} from "react-scroll";
-import {FC} from "react";
+import {FC, memo} from "react";
 import {S} from './Services_Styles.ts'
 
 
@@ -16,7 +16,7 @@ type ServicesItemsType = {
     title: string
     text: string
 }[]
-export const Services: FC = () => {
+export const Services: FC = memo(() => {
     const ServicesItems: ServicesItemsType = [
         {
             iconId: 'code',
@@ -63,4 +63,4 @@ export const Services: FC = () => {
             </Container>
         </S.Services>
     );
-}
+})
