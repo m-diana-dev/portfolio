@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Logo = styled.a`
+const Logo = styled.div`
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
