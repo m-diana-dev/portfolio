@@ -57,6 +57,7 @@ const Policy = styled.section`
 const PolicyNote = styled.small`
   display: block;
   font-size: 11px;
+  margin-bottom: 20px;
 `
 
 export const S = {

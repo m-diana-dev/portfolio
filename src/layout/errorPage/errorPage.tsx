@@ -4,8 +4,12 @@ import {FlexWrapp} from "../../components/FlexWrapp.ts";
 import {Icon} from "../../components/icon/Icon.tsx";
 import {Decor} from "../../components/Decor.ts";
 import {memo} from "react";
+import {Button} from "../../components/button/Button.ts";
+import {useNavigate} from "react-router-dom";
 
 export const ErrorPage = memo(() => {
+    const navigate = useNavigate()
+
     return (
         <S.ErrorPage>
             <Decor>
@@ -17,6 +21,7 @@ export const ErrorPage = memo(() => {
                     <S.ErrorPageStatus>404</S.ErrorPageStatus>
                     <S.ErrorPageTitle>Ой...</S.ErrorPageTitle>
                     <S.ErrorPageSubtitle>Такой страницы не существует :(</S.ErrorPageSubtitle>
+                    <Button onClick={()=>navigate(-1)}>Назад</Button>
                 </FlexWrapp>
             </Container>
         </S.ErrorPage>

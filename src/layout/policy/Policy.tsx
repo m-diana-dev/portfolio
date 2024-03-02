@@ -3,8 +3,12 @@ import {Container} from "../../components/Container.ts";
 import {S} from './Policy_Styles.ts'
 import {Icon} from "../../components/icon/Icon.tsx";
 import {Decor} from "../../components/Decor.ts";
+import {Button} from "../../components/button/Button.ts";
+import {useNavigate} from "react-router-dom";
 
 export const Policy: FC = memo(() => {
+    const navigate = useNavigate()
+
     return (
         <S.Policy>
             <Decor>
@@ -133,6 +137,7 @@ export const Policy: FC = memo(() => {
                                                                       title="Составить политику конфиденциальности для сайта"> Юридическая
                     компания АйТи-Лекс</a>
                 </S.PolicyNote>
+                <Button onClick={()=>navigate(-1)}>Назад</Button>
             </Container>
         </S.Policy>
     );

@@ -42,6 +42,7 @@ const ErrorPageTitle = styled.div`
 `
 const ErrorPageSubtitle = styled.div`
   ${font({fontMin: 18, fontMax: 22, lineHeight: 1.1})};
+  margin-bottom: 30px;
 `
 const ErrorPageStatus = styled.div`
   ${font({fontMin: 180, fontMax: 220, lineHeight: 1.1})};
