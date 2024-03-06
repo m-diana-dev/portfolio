@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import {FlexWrapp} from "../../components/FlexWrapp.ts";
-import Styles from '../../components/social/Social_Styles.ts'
+import {FlexWrapp} from "../../../components/FlexWrapp.ts";
+import Styles from '../../../components/social/Social_Styles.ts'
 
 const Footer = styled.footer`
   flex: 0 0 auto;

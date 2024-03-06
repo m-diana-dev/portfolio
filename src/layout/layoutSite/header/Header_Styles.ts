@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components";
 import {Link} from "react-scroll";
-import Styles from '../../components/social/Social_Styles.ts'
+import Styles from '../../../components/social/Social_Styles.ts'
 import {NavLink} from "react-router-dom";
 
 const Header = styled.header`

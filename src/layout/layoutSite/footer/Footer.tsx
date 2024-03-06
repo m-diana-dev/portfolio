@@ -1,6 +1,6 @@
-import {Container} from "../../components/Container.ts";
-import {FlexWrapp} from "../../components/FlexWrapp.ts";
-import {Social} from "../../components/social/Social.tsx";
+import {Container} from "../../../components/Container.ts";
+import {FlexWrapp} from "../../../components/FlexWrapp.ts";
+import {Social} from "../../../components/social/Social.tsx";
 import {S} from './Footer_Styles.ts'
 import {NavLink} from "react-router-dom";
 

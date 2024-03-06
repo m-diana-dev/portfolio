@@ -1,7 +1,7 @@
-import {Container} from "../../components/Container.js";
-import {Logo} from "../../components/logo/Logo.tsx";
-import {Social} from "../../components/social/Social.tsx";
-import {FlexWrapp} from "../../components/FlexWrapp.ts";
+import {Container} from "../../../components/Container.ts";
+import {Logo} from "../../../components/logo/Logo.tsx";
+import {Social} from "../../../components/social/Social.tsx";
+import {FlexWrapp} from "../../../components/FlexWrapp.ts";
 import {FC, memo} from "react";
 import {S} from './Header_Styles.ts'
 import {NavLink, useLocation} from "react-router-dom";
