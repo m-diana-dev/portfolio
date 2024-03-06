@@ -11,7 +11,7 @@ import {S} from './Contacts_Styles.ts'
 import {FC, memo} from "react";
 import emailjs from '@emailjs/browser';
 import {FieldValues, useForm} from "react-hook-form";
-import {NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export const Contacts: FC = memo(() => {
     const {
@@ -75,8 +75,8 @@ export const Contacts: FC = memo(() => {
                             <S.FormError>{errors.message.message && errors.message.message.toString()}</S.FormError>}
                         <FlexWrapp $align={'center'} $wrap={'wrap'}>
                             <Button type='submit'>Отправить</Button>
-                            <S.FormNote>Отправляя форму, Вы соглашаетесь с <S.FormLink><NavLink to={'/policy'}>политикой
-                                конфиденциальности</NavLink></S.FormLink></S.FormNote>
+                            <S.FormNote>Отправляя форму, Вы соглашаетесь с <S.FormLink><Link to={'/policy'}>политикой
+                                конфиденциальности</Link></S.FormLink></S.FormNote>
                         </FlexWrapp>
                     </S.ContactsForm>
                 </FlexWrapp>

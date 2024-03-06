@@ -4,7 +4,7 @@ import {Social} from "../../../components/social/Social.tsx";
 import {FlexWrapp} from "../../../components/FlexWrapp.ts";
 import {FC, memo} from "react";
 import {S} from './Header_Styles.ts'
-import {NavLink, useLocation} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 type HeaderPropsType = {
     isMenuOpenCallback: (isMenuOpen: boolean) => void
@@ -36,7 +36,7 @@ export const Header: FC<HeaderPropsType> = memo(({isMenuOpenCallback, openMenu})
         <S.Header>
             <Container>
                 <FlexWrapp $justify={'space-between'}>
-                    {innerPage ? <NavLink to={'/'}><Logo/></NavLink> : <Logo/>}
+                    {innerPage ? <Link to={'/'}><Logo/></Link> : <Logo/>}
                     <S.Menu $isopen={openMenu}>
                         <S.MenuBurger onClick={onBurgerHandler}><span></span></S.MenuBurger>
                         <S.MenuBody>

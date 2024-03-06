@@ -1,7 +1,7 @@
 import styled, {css} from "styled-components";
 import {Link} from "react-scroll";
 import Styles from '../../../components/social/Social_Styles.ts'
-import {NavLink} from "react-router-dom";
+import {Link as LinkRouter} from "react-router-dom";
 
 const Header = styled.header`
   padding: 15px 0;
@@ -184,7 +184,7 @@ const MenuLink = styled(Link)`
     }
   }
 `
-const HeaderLink = styled(NavLink)`
+const HeaderLink = styled(LinkRouter)`
   padding-bottom: 4px;
   position: relative;
   cursor: pointer;
