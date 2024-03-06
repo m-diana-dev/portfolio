@@ -3,8 +3,9 @@ import {FlexWrapp} from "../../../components/FlexWrapp.ts";
 import {Social} from "../../../components/social/Social.tsx";
 import {S} from './Footer_Styles.ts'
 import {Link} from "react-router-dom";
+import {FC, memo} from "react";
 
-export const Footer = () => {
+export const Footer: FC = memo(() => {
     return (
         <S.Footer>
             <Container>
@@ -20,4 +21,4 @@ export const Footer = () => {
             </Container>
         </S.Footer>
     );
-}
+})

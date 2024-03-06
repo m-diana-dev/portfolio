@@ -11,6 +11,7 @@ export const Tools: FC = memo(() => {
         {id: 'typescript', box: '0 0 24 24'},
         {id: 'redux', box: '0 0 24 24'},
     ]
+
     return (
         <S.Tools>
             <S.ToolsItems>

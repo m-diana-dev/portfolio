@@ -2,10 +2,10 @@ import {S} from '../../layout/layoutSite/LayoutSite_Styles.ts'
 import {Outlet} from "react-router-dom";
 import {Footer} from "../../layout/layoutSite/footer/Footer.tsx";
 import {Header} from "../../layout/layoutSite/header/Header.tsx";
-import {useState} from "react";
+import {FC, memo, useState} from "react";
 import {Theme} from "../../styles/Theme.tsx";
 
-export const LayoutSite = () => {
+export const LayoutSite: FC = memo(() => {
     const [openMenu, setOpenMenu] = useState(false)
     const isMenuOpenCallback = (isMenuOpen: boolean) => {
         setOpenMenu(isMenuOpen)
@@ -18,5 +18,5 @@ export const LayoutSite = () => {
                 <Footer/>
             </S.Wrapper>
         </Theme>
-    );
-}
+    )
+})
